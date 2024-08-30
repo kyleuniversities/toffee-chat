@@ -1,0 +1,16 @@
+/user
+    * POST /
+    * PATCH /:id
+    * DELETE /:id
+    * GET /:id
+    * GET /
+
+/room
+    * POST /
+    * GET /:id
+    * GET ?user=userId
+
+/message
+    * POST /
+    * GET /:id
+    * GET ?room=roomId
