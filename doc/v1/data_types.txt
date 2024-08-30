@@ -16,6 +16,11 @@ room {
     user2: String
 }
 
+connection {
+    user1: String,
+    user2: String
+}
+
 message {
     room: String,
     sender: String,

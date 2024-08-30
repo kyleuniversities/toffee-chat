@@ -10,6 +10,16 @@
     * GET /:id
     * GET ?user=userId
 
+/connection
+    * POST /
+    * GET /:id
+    * GET ?user=userId
+
+/connection-request
+    * POST /
+    * GET /:id
+    * GET ?user=userId
+
 /message
     * POST /
     * GET /:id
