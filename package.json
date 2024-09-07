@@ -14,12 +14,16 @@
   },
   "dependencies": {
     "@prisma/client": "^5.19.0",
+    "apollo-server-micro": "^3.13.0",
+    "graphql": "^16.9.0",
+    "micro-cors": "^0.1.1",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18",
     "toffee-chat": "file:"
   },
   "devDependencies": {
+    "@types/react": "18.3.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
     "postcss": "^8",
