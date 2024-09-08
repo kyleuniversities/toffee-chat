@@ -42,3 +42,18 @@ body {
     height: 100%;
     font-size: 30px;
 }
+
+.profile-box-container {
+    margin-left: auto;
+    order: 2;
+}
+
+.profile-avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+}
+
+.profile-box-name {
+    font-size: 20px;
+}
