@@ -1,1 +1,44 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+
+/** Root **/
+:root {
+    --brown: rgb(200,120,0);
+    --light-brown: rgb(250,200,150);
+}
+
+/** Body **/
+body {
+    background-color: var(--light-brown);
+}
+
+/** Logo **/
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+/** Backgrounds **/
+.bg-brown {
+    background-color: var(--brown);
+}
+
+.bg-light-brown {
+    background-color: var(--light-brown);
+}
+
+/** Sizes **/
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/** Headers **/
+.site-header {
+    font-family: Cursive;
+    min-height: 50px;
+    height: 100%;
+    font-size: 30px;
+}
