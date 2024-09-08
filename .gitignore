@@ -2,3 +2,6 @@ saves
 notes
 ignore
 .env
+
+backend/ruby/config
+backend/ruby/tmp
