@@ -1,0 +1,16 @@
+Started GET "/" for ::1 at 2024-09-07 23:16:18 -0700
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Ruby'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Ruby'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-07 23:16:25 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n    testField\n}", "variables"=>{}, "graphql"=>{"query"=>"{\n    testField\n}", "variables"=>{}}}
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
