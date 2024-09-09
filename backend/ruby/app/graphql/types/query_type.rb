@@ -21,6 +21,15 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
+    # Test Fields
+    field :test, [UserType], null: false, description: 'Test'
+    def test
+      users = User.all
+      users[1].name = 'Guest 2'
+      users
+    end
+
+    # User Fields
     field :users, [UserType], null: false, description: 'List all users'
     def users
       User.all
@@ -33,9 +42,22 @@ module Types
       User.where(id: id)
     end
 
+    # field :newsPosts, [PostType], null: false, description: 'List all news posts'
+    # def newsPosts
+    #   posts = Post.all
+    #   posts.select{|item| item.kind == "news"}
+    # end
+
+    # Post Fields
     field :posts, [PostType], null: false, description: 'List all posts'
     def posts
       Post.all
+    end
+    
+    field :newsPosts, [PostType], null: false, description: 'List all news posts'
+    def newsPosts
+      posts = Post.all
+      posts.select{|item| item.kind == "news"}
     end
 
     field :postById, [PostType], null: false do
@@ -45,6 +67,7 @@ module Types
       Post.where(id: id)
     end
 
+    # Comment Fields
     field :comments, [CommentType], null: false, description: 'List all comments'
     def comments
       Comment.all

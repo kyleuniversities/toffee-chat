@@ -3117,3 +3117,801 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Ruby'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Migrating to AddPost (20240909223747)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "posts" ADD "type" varchar /*application='Ruby'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240909223747') RETURNING "version" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 15:40:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}}}
+              Failed to implement Query.test, tried:
+
+              - `Types::QueryType#test`, which did not exist
+              - `NilClass#test`, which did not exist
+              - Looking up hash key `:test` or `"test"` on ``, but it wasn't a Hash
+
+              To implement this field, define one of the methods above (and check for typos), or supply a `fallback_value`.
+
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:742:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:860:in `block in with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:896:in `block (2 levels) in run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:899:in `run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:896:in `block in run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field_extension.rb:134:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:883:in `run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:855:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 15:40:53 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.test'*/[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 15:41:08 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}}}
+undefined method `at' for an instance of ActiveRecord::Relation
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:122:in `method_missing'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/query_type.rb:28:in `test'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:860:in `block in with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:896:in `block (2 levels) in run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:899:in `run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:896:in `block in run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field_extension.rb:134:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:883:in `run_extensions_before_resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:855:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 13ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 15:41:29 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.test'*/[0m
+  ↳ app/graphql/types/query_type.rb:28:in `test'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 15:41:47 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.test'*/[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 5.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 15:42:11 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    test {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.test'*/[0m
+  ↳ app/graphql/types/query_type.rb:27:in `test'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = 3 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = 4 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 11 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (1.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 12 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (3.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 13 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (1.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 14 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 15 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 8 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 9 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 10 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Adam', 'adam234', 'adam234@example.com', 'adam234%', NULL, '2024-09-09 22:57:44.079767', '2024-09-09 22:57:44.079767', 'Hi everyone, I''m Adam.  I''m considered to be good at mountain climbing') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Guest', 'guest488', 'guest488@example.com', 'guest488%', NULL, '2024-09-09 22:57:44.080836', '2024-09-09 22:57:44.080836', 'This is the default guest account for users') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bianca', 'bianca987', 'bianca987@example.com', 'bianca987%', NULL, '2024-09-09 22:57:44.081735', '2024-09-09 22:57:44.081735', 'Ittts Bianca!  Happy to be here!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bob Neumann', 'neumann756', 'neumann756@example.com', 'neumann756%', NULL, '2024-09-09 22:57:44.082614', '2024-09-09 22:57:44.082614', 'Hello everybody, I''m Bob Neumann, your local news anchor giving you the best news and coverage you can trust!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /*application='Ruby'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='Ruby'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 12 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 13 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 14 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 15 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (4.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Adam', 'adam234', 'adam234@example.com', 'adam234%', NULL, '2024-09-09 22:58:13.210513', '2024-09-09 22:58:13.210513', 'Hi everyone, I''m Adam.  I''m considered to be good at mountain climbing') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Guest', 'guest488', 'guest488@example.com', 'guest488%', NULL, '2024-09-09 22:58:13.220203', '2024-09-09 22:58:13.220203', 'This is the default guest account for users') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bianca', 'bianca987', 'bianca987@example.com', 'bianca987%', NULL, '2024-09-09 22:58:13.222243', '2024-09-09 22:58:13.222243', 'Ittts Bianca!  Happy to be here!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bob Neumann', 'neumann756', 'neumann756@example.com', 'neumann756%', NULL, '2024-09-09 22:58:13.223120', '2024-09-09 22:58:13.223120', 'Hello everybody, I''m Bob Neumann, your local news anchor giving you the best news and coverage you can trust!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /*application='Ruby'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='Ruby'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 16 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 17 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 18 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 19 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (4.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Adam', 'adam234', 'adam234@example.com', 'adam234%', NULL, '2024-09-09 22:59:05.245624', '2024-09-09 22:59:05.245624', 'Hi everyone, I''m Adam.  I''m considered to be good at mountain climbing') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Guest', 'guest488', 'guest488@example.com', 'guest488%', NULL, '2024-09-09 22:59:05.254820', '2024-09-09 22:59:05.254820', 'This is the default guest account for users') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bianca', 'bianca987', 'bianca987@example.com', 'bianca987%', NULL, '2024-09-09 22:59:05.255758', '2024-09-09 22:59:05.255758', 'Ittts Bianca!  Happy to be here!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bob Neumann', 'neumann756', 'neumann756@example.com', 'neumann756%', NULL, '2024-09-09 22:59:05.256614', '2024-09-09 22:59:05.256614', 'Hello everybody, I''m Bob Neumann, your local news anchor giving you the best news and coverage you can trust!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /*application='Ruby'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='Ruby'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 20 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 21 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 22 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 23 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Adam', 'adam234', 'adam234@example.com', 'adam234%', NULL, '2024-09-09 22:59:11.507565', '2024-09-09 22:59:11.507565', 'Hi everyone, I''m Adam.  I''m considered to be good at mountain climbing') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Guest', 'guest488', 'guest488@example.com', 'guest488%', NULL, '2024-09-09 22:59:11.516497', '2024-09-09 22:59:11.516497', 'This is the default guest account for users') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bianca', 'bianca987', 'bianca987@example.com', 'bianca987%', NULL, '2024-09-09 22:59:11.518134', '2024-09-09 22:59:11.518134', 'Ittts Bianca!  Happy to be here!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bob Neumann', 'neumann756', 'neumann756@example.com', 'neumann756%', NULL, '2024-09-09 22:59:11.519009', '2024-09-09 22:59:11.519009', 'Hello everybody, I''m Bob Neumann, your local news anchor giving you the best news and coverage you can trust!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /*application='Ruby'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='Ruby'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 24 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 25 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 26 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 27 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (3.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Adam', 'adam234', 'adam234@example.com', 'adam234%', NULL, '2024-09-09 23:00:07.649647', '2024-09-09 23:00:07.649647', 'Hi everyone, I''m Adam.  I''m considered to be good at mountain climbing') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Guest', 'guest488', 'guest488@example.com', 'guest488%', NULL, '2024-09-09 23:00:07.658620', '2024-09-09 23:00:07.658620', 'This is the default guest account for users') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bianca', 'bianca987', 'bianca987@example.com', 'bianca987%', NULL, '2024-09-09 23:00:07.660608', '2024-09-09 23:00:07.660608', 'Ittts Bianca!  Happy to be here!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bob Neumann', 'neumann756', 'neumann756@example.com', 'neumann756%', NULL, '2024-09-09 23:00:07.661496', '2024-09-09 23:00:07.661496', 'Hello everybody, I''m Bob Neumann, your local news anchor giving you the best news and coverage you can trust!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Ruby'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Migrating to AlterPost (20240909230030)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Ruby'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "picture" varchar, "body" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "kind" varchar) /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id") /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aposts" ("id","user_id","picture","body","created_at","updated_at","kind")
+                     SELECT "id","user_id","picture","body","created_at","updated_at","type" FROM "posts" /*application='Ruby'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "posts" /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "picture" varchar, "body" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "kind" varchar, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id") /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("id","user_id","picture","body","created_at","updated_at","kind")
+                     SELECT "id","user_id","picture","body","created_at","updated_at","kind" FROM "aposts" /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aposts" /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Ruby'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Ruby'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240909230030') RETURNING "version" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /*application='Ruby'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*application='Ruby'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 28 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 29 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 30 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 31 /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (4.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Adam', 'adam234', 'adam234@example.com', 'adam234%', NULL, '2024-09-09 23:01:16.969437', '2024-09-09 23:01:16.969437', 'Hi everyone, I''m Adam.  I''m considered to be good at mountain climbing') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Guest', 'guest488', 'guest488@example.com', 'guest488%', NULL, '2024-09-09 23:01:16.978869', '2024-09-09 23:01:16.978869', 'This is the default guest account for users') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bianca', 'bianca987', 'bianca987@example.com', 'bianca987%', NULL, '2024-09-09 23:01:16.979864', '2024-09-09 23:01:16.979864', 'Ittts Bianca!  Happy to be here!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Bob Neumann', 'neumann756', 'neumann756@example.com', 'neumann756%', NULL, '2024-09-09 23:01:16.980748', '2024-09-09 23:01:16.980748', 'Hello everybody, I''m Bob Neumann, your local news anchor giving you the best news and coverage you can trust!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (32, NULL, 'Hi everybody, this is my first post!  It''s a pleasure to be here!', '2024-09-09 23:01:16.983812', '2024-09-09 23:01:16.983812', 'social') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (32, NULL, 'I wanna show everyone my skills at mountain climbing.  It''s fun!', '2024-09-09 23:01:16.984788', '2024-09-09 23:01:16.984788', 'social') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (32, NULL, 'I''m setting up a mountain climbing event this September.  I''d like to invite you guys!', '2024-09-09 23:01:16.985682', '2024-09-09 23:01:16.985682', 'social') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (34, NULL, 'The weather is looking sunny today!  Remember guys to always keep pushing forward.', '2024-09-09 23:01:16.986562', '2024-09-09 23:01:16.986562', 'social') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (34, NULL, 'Believe in yourself everybody!  It''s what you need to succeed!', '2024-09-09 23:01:16.987447', '2024-09-09 23:01:16.987447', 'social') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (35, NULL, 'Disney parks may be the "Happiest Place on Earth," but the nothing could have prepared them for the "snake pit," a staffer for former CEO Bob Chapek told The New York Times. The Times'' investigation details Bob Iger''s plan to have Chapek overstep as the new Chief Executive Officer, reporting to both Disney''s board and Iger. Under Chapek''s period of being in charge, Disney shares went down, and it endured a string of box office flops — while activist investors were expectant of Iger in 2022. Ultimately, the Tigger came back in November 2022 a the new CEO.', '2024-09-09 23:01:16.988343', '2024-09-09 23:01:16.988343', 'news') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (35, NULL, 'American college graduates who have fallen behind on student loan payments are about to see that delinquency data reflected in their credit scores, and it is not a good look. On the one hand, the repyament on many student loans resumed in 2023 on the month of October, the White House last year extended a long moratorium that barred missed or late student-loan payments from being included in credit reports. However, that would not last forever.  With that safeguard disappearing in just one month from now, "a large share of student debtors" will likely have to observe their access to credit — which may provide a possible but crucial financial cushion amid inflation — reduced, reports Bloomberg', '2024-09-09 23:01:16.989708', '2024-09-09 23:01:16.989708', 'news') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at", "kind") VALUES (35, NULL, 'Hostmore, the hospitality group that operates TGI Fridays locations in the U.K., has waffled on its plan to acquire the Texas-based casual-dining chain on Wednesday. The move comes after a "CEO termination event" last week saw Thursday lose control of most of its assets, with consulting firm Consulting permanently taking over management in the company. Hostmore, which announced a plan in March to buy the company for $190 million and take it public on the London Stock Exchange, unfortunately saw its shares plummet more than 80% on the news.', '2024-09-09 23:01:16.990727', '2024-09-09 23:01:16.990727', 'news') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "post_id", "created_at", "updated_at", "body") VALUES (35, 1, '2024-09-09 23:01:16.992792', '2024-09-09 23:01:16.992792', 'Nice to meet you!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "post_id", "created_at", "updated_at", "body") VALUES (32, 5, '2024-09-09 23:01:16.993743', '2024-09-09 23:01:16.993743', 'I believe you in Bianca!') RETURNING "id" /*application='Ruby'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:01:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "variables"=>{}, "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "variables"=>{}}}
+Interface `Node` hidden because it has no visible implementers
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:02:09 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    post {\n        id,\n        kind,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    post {\n        id,\n        kind,\n        body\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:02:11 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    posts {\n        id,\n        kind,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    posts {\n        id,\n        kind,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.posts'*/[0m
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:03:51 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    newsPosts {\n        id,\n        kind,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    newsPosts {\n        id,\n        kind,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.newsPosts'*/[0m
+  ↳ app/graphql/types/query_type.rb:51:in `newsPosts'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:15:33 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:15:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 10.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:16:30 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:16:47 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:20:05 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 10.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:20:21 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:20:24 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:20:27 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:21:54 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+uninitialized constant Types::UserType::Number
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/object.rb:118:in `const_missing'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:12:in `<class:UserType>'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:4:in `<module:Types>'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:3:in `<main>'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `block (2 levels) in replace_require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/zeitwerk-2.6.18/lib/zeitwerk/kernel.rb:26:in `require'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:6:in `<class:MutationType>'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:4:in `<module:Types>'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:3:in `<main>'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `block (2 levels) in replace_require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/zeitwerk-2.6.18/lib/zeitwerk/kernel.rb:26:in `require'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/ruby_schema.rb:4:in `<class:RubySchema>'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/ruby_schema.rb:3:in `<main>'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `block (2 levels) in replace_require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/zeitwerk-2.6.18/lib/zeitwerk/kernel.rb:26:in `require'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/controllers/graphql_controller.rb:17:in `execute'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/basic_implicit_render.rb:8:in `send_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/base.rb:226:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/rendering.rb:193:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/callbacks.rb:261:in `block in process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/callbacks.rb:260:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/rescue.rb:27:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/notifications.rb:210:in `block in instrument'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/notifications.rb:210:in `instrument'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/base.rb:163:in `process'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal.rb:252:in `dispatch'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal.rb:335:in `dispatch'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/routing/route_set.rb:50:in `serve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:53:in `block in serve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:126:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:126:in `find_routes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:34:in `serve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/routing/route_set.rb:896:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/etag.rb:29:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/conditional_get.rb:43:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/head.rb:15:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/migration.rb:674:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/executor.rb:16:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/rack/logger.rb:41:in `call_app'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/rack/logger.rb:29:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/request_id.rb:33:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/runtime.rb:24:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/executor.rb:16:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/static.rb:27:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/sendfile.rb:114:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-cors-2.0.2/lib/rack/cors.rb:102:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/engine.rb:535:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/configuration.rb:272:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/request.rb:100:in `block in handle_request'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/request.rb:99:in `handle_request'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/server.rb:464:in `process_client'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/server.rb:245:in `block in run'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Completed 500 Internal Server Error in 4ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:22:52 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numbefOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:23:15 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+undefined local variable or method `posts' for an instance of Types::UserType
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:20:in `numberOfPosts'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 27ms (Views: 0.2ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 15.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:23:33 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+undefined local variable or method `this' for an instance of Types::UserType
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:20:in `numberOfPosts'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 9ms (Views: 0.1ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:23:40 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfComments'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfComments'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfComments'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfComments'
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 1.4ms (9 queries, 0 cached) | GC: 7.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:24:01 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfPosts,\n        numberOfComments\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:24:08 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredComments'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredComments'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredComments'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:20:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredComments'
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 2.5ms (9 queries, 0 cached) | GC: 5.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:40:24 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments,\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments,\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+undefined method `numberOfComments' for an instance of Post
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_methods.rb:507:in `method_missing'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_methods.rb:491:in `method_missing'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:37:in `numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 42ms (Views: 0.1ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:40:48 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments,\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments,\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+undefined method `numberOfComments' for an instance of Post
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_methods.rb:507:in `method_missing'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_methods.rb:491:in `method_missing'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:37:in `numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 17ms (Views: 0.1ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:40:51 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+undefined method `numberOfComments' for an instance of Post
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_methods.rb:507:in `method_missing'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_methods.rb:491:in `method_missing'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:37:in `numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:41:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+undefined method `numberOfComments' for an instance of Post
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_methods.rb:507:in `method_missing'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_methods.rb:491:in `method_missing'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation/delegation.rb:98:in `each'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:37:in `numberOfReceivedComments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 35ms (Views: 0.1ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 11.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:42:21 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfReceivedComments\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 3 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 4 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 5 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 6 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 7 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+Completed 200 OK in 88ms (Views: 0.1ms | ActiveRecord: 6.4ms (17 queries, 0 cached) | GC: 16.4ms)
+
+
