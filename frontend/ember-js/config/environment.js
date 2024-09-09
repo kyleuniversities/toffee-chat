@@ -6,7 +6,7 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     apollo: {
-      apiURL: 'http://localhost:3000/graphql'
+      apiURL: 'http://localhost:3000/graphql',
     },
     locationType: 'history',
     EmberENV: {

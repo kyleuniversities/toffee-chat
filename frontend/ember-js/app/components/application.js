@@ -1,8 +1,8 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { queryManager } from 'ember-apollo-client'
-import query from '../gql/queries/requester.graphql'
+import { queryManager } from 'ember-apollo-client';
+import query from '../gql/queries/requester.graphql';
 
 export default class Application extends Component {
   @queryManager apollo;
@@ -30,9 +30,11 @@ export default class Application extends Component {
 
   @action
   async request() {
-    const variables = { }
-    const result = await this.apollo.query({ query }, null)
-    alert(`result: ${JSON.stringify(result.data, null, 2)}, ${JSON.stringify(result.users, null, 2)}`)
-    this.requestBody = JSON.stringify(result, null, 2)
+    const variables = {};
+    const result = await this.apollo.query({ query }, null);
+    alert(
+      `result: ${JSON.stringify(result.data, null, 2)}, ${JSON.stringify(result.users, null, 2)}`,
+    );
+    this.requestBody = JSON.stringify(result, null, 2);
   }
 }

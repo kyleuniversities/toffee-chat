@@ -1971,3 +1971,161 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 0.9ms (9 queries, 0 cached) | GC: 0.8ms)
 
 
+Started POST "/graphql" for ::1 at 2024-09-09 08:11:39 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"2\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"2\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}"}}
+Completed 200 OK in 27ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:12:13 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"2\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"2\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 8.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:12:34 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"2\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"2\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 08:12:36 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.4ms (9 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 08:12:51 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 08:12:58 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (17.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 18.5ms (9 queries, 0 cached) | GC: 13.3ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:13:11 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:13:15 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    bio\n    __typename\n  }\n}"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:13:29 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:13:47 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 08:14:22 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    userById(id: \"9\") {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    userById(id: \"9\") {\n        id,\n        name,\n        username\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:14:34 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:15:39 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:15:49 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:16:06 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 12.2ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:16:13 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:16:21 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:16:34 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:16:46 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:16:52 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2024-09-09 08:16:59 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}", "graphql"=>{"variables"=>{}, "query"=>"{\n  userById(id: \"9\") {\n    id\n    name\n    username\n    __typename\n  }\n}"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.userById'*/[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
