@@ -3915,3 +3915,103 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 88ms (Views: 0.1ms | ActiveRecord: 6.4ms (17 queries, 0 cached) | GC: 16.4ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:58:01 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfAuthoredLikess,\n        numberOfReceivedComments,\n        numberOfReceivedLikes,\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfAuthoredLikess,\n        numberOfReceivedComments,\n        numberOfReceivedLikes,\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:58:04 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfAuthoredLikes,\n        numberOfReceivedComments,\n        numberOfReceivedLikes,\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfAuthoredLikes,\n        numberOfReceivedComments,\n        numberOfReceivedLikes,\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+undefined method `likes' for an instance of User
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_methods.rb:507:in `method_missing'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_methods.rb:491:in `method_missing'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/user_type.rb:32:in `numberOfAuthoredLikes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:717:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:273:in `evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:228:in `block (3 levels) in evaluate_selections'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 11ms (Views: 0.2ms | ActiveRecord: 2.5ms (3 queries, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 16:59:16 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfAuthoredLikes,\n        numberOfReceivedComments,\n        numberOfReceivedLikes,\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username,\n        bio,\n        numberOfAuthoredPosts,\n        numberOfAuthoredComments,\n        numberOfAuthoredLikes,\n        numberOfReceivedComments,\n        numberOfReceivedLikes,\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = 32 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:32:in `numberOfAuthoredLikes'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 3 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 2 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 3 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = 33 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:32:in `numberOfAuthoredLikes'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = 34 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:32:in `numberOfAuthoredLikes'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 4 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 5 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 4 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 5 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredPosts'*/[0m
+  ↳ app/graphql/types/user_type.rb:24:in `numberOfAuthoredPosts'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:28:in `numberOfAuthoredComments'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = 35 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfAuthoredLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:32:in `numberOfAuthoredLikes'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 6 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 7 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedComments'*/[0m
+  ↳ app/graphql/types/user_type.rb:38:in `block in numberOfReceivedComments'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 6 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 7 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.numberOfReceivedLikes'*/[0m
+  ↳ app/graphql/types/user_type.rb:46:in `block in numberOfReceivedLikes'
+Completed 200 OK in 63ms (Views: 0.1ms | ActiveRecord: 2.6ms (29 queries, 0 cached) | GC: 10.0ms)
+
+
