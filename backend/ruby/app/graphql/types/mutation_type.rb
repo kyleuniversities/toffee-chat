@@ -75,5 +75,36 @@ module Types
         comment.update body: body
         comment
       end
+
+      # Delete Fields
+      field :deleteUser, UserType, null: false do
+        argument :id, String, required: true
+      end
+      def deleteUser(id:)
+        user = User.where(id: id).first
+        user.comments.destroy_all
+        user.posts.destroy_all
+        User.where(id: id).destroy_all
+        user
+      end
+
+      field :deletePost, PostType, null: false do
+        argument :id, String, required: true
+      end
+      def deletePost(id:)
+        post = Post.where(id: id).first
+        post.comments.destroy_all
+        Post.where(id: id).destroy_all
+        post
+      end
+
+      field :deleteComment, CommentType, null: false do
+        argument :id, String, required: true
+      end
+      def deleteComment(id:)
+        comment = Comment.where(id: id).first
+        Comment.where(id: id).destroy_all
+        comment
+      end
   end
 end

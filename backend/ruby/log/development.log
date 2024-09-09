@@ -1750,3 +1750,224 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 1.2ms (15 queries, 0 cached) | GC: 6.2ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:20:55 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    deleteComment(id: \"5\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    deleteComment(id: \"5\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+Failed to call `:deleteComment` on #<Types::MutationType:0x00000001232b9278 @object=nil, @context=#<Query::Context ...>> because the Ruby method params were incompatible with the GraphQL arguments:
+
+- `name:` is required by Ruby, but not by GraphQL. Consider `name: nil` instead, or making this argument required in GraphQL.
+- `username:` is required by Ruby, but not by GraphQL. Consider `username: nil` instead, or making this argument required in GraphQL.
+- `bio:` is required by Ruby, but not by GraphQL. Consider `bio: nil` instead, or making this argument required in GraphQL.
+
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:822:in `assert_satisfactory_implementation'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:772:in `rescue in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:675:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:341:in `block in evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:810:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:288:in `evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:282:in `block in evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/arguments_cache.rb:46:in `block in dataload_for'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/member/has_arguments.rb:272:in `block (3 levels) in coerce_arguments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:21:13 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    deleteComment(id: \"5\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    deleteComment(id: \"5\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = 5 ORDER BY "comments"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:102:in `deleteComment'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = 5 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:103:in `deleteComment'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:103:in `deleteComment'
+  [1m[36mComment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = 5 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:103:in `deleteComment'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:103:in `deleteComment'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.4ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:21:19 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 16 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 17 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 18 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 19 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 20 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 1.5ms (15 queries, 0 cached) | GC: 4.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:21:35 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    deleteUser(id: \"11\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    deleteUser(id: \"11\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:21:44 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 16 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 17 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 18 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 19 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 20 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 1.2ms (15 queries, 0 cached) | GC: 1.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:21:53 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    deleteUser(id: \"11\") {\n        id,\n        name\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    deleteUser(id: \"11\") {\n        id,\n        name\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:84:in `deleteUser'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:85:in `deleteUser'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:85:in `deleteUser'
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:85:in `deleteUser'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:85:in `deleteUser'
+SQLite3::ConstraintException: FOREIGN KEY constraint failed
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/sqlite3-2.0.4-arm64-darwin/lib/sqlite3/statement.rb:125:in `step'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/sqlite3-2.0.4-arm64-darwin/lib/sqlite3/statement.rb:125:in `block in each'
+<internal:kernel>:187:in `loop'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/sqlite3-2.0.4-arm64-darwin/lib/sqlite3/statement.rb:124:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/sqlite3/database_statements.rb:42:in `to_a'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/sqlite3/database_statements.rb:42:in `block (2 levels) in internal_exec_query'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract_adapter.rb:1004:in `block in with_raw_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract_adapter.rb:976:in `with_raw_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/sqlite3/database_statements.rb:33:in `block in internal_exec_query'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract_adapter.rb:1119:in `log'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/sqlite3/database_statements.rb:32:in `internal_exec_query'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/sqlite3/database_statements.rb:63:in `exec_delete'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/database_statements.rb:214:in `delete'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/query_cache.rb:27:in `delete'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:298:in `block in _delete_record'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:389:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_handling.rb:296:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:297:in `_delete_record'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:873:in `_delete_row'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:869:in `destroy_row'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/counter_cache.rb:211:in `destroy_row'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/locking/optimistic.rb:125:in `destroy_row'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:458:in `destroy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/callbacks.rb:423:in `block in destroy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/callbacks.rb:913:in `_run_destroy_callbacks'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/callbacks.rb:423:in `destroy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:358:in `block in destroy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:418:in `block (2 levels) in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:616:in `block in within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:613:in `within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/database_statements.rb:361:in `transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:414:in `block in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:395:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_handling.rb:296:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:410:in `with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:358:in `destroy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation.rb:983:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/relation.rb:983:in `destroy_all'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:85:in `deleteUser'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:341:in `block in evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:810:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:288:in `evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:282:in `block in evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/arguments_cache.rb:46:in `block in dataload_for'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/member/has_arguments.rb:272:in `block (3 levels) in coerce_arguments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 7ms (Views: 0.2ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:22:38 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    deleteUser(id: \"11\") {\n        id,\n        name\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    deleteUser(id: \"11\") {\n        id,\n        name\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:84:in `deleteUser'
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:85:in `deleteUser'
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 16 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 17 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 18 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 19 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = 20 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:86:in `deleteUser'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:87:in `deleteUser'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:87:in `deleteUser'
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.deleteUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:87:in `deleteUser'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:87:in `deleteUser'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 1.8ms (10 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:22:45 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 0.9ms (9 queries, 0 cached) | GC: 0.8ms)
+
+
