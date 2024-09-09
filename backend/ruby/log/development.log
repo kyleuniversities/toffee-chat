@@ -98,3 +98,11 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2024-09-08 19:10:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Ruby'*/[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n    users {\n        name,\n        email,\n        password\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"{\n    users {\n        name,\n        email,\n        password\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 10.2ms)
+
+

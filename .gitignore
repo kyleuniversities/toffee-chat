@@ -5,3 +5,5 @@ ignore
 
 backend/ruby/config
 backend/ruby/tmp
+backend/ruby/log
+backend/ruby/storage
