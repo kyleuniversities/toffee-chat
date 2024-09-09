@@ -1,14 +1,11 @@
 # frozen_string_literal: true
 
 module Types
-  class UserType < Types::BaseObject
+  class PostType < Types::BaseObject
     field :id, ID, null: false
-    field :name, String
-    field :username, String
-    field :email, String
-    field :password, String
-    field :role, String
-    field :posts, [Types::PostType]
+    field :user, String
+    field :picture, String
+    field :body, String
     field :comments, [Types::CommentType]
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false

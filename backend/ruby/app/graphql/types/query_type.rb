@@ -32,5 +32,36 @@ module Types
     def users
       User.all
     end
+
+    field :userById, [UserType], null: false do
+      argument :id, String, required: true
+    end
+    def userById(id: )
+      User.where(id: id)
+    end
+
+    field :posts, [PostType], null: false, description: 'List all posts'
+    def posts
+      Post.all
+    end
+
+    field :postById, [PostType], null: false do
+      argument :id, String, required: true
+    end
+    def postById(id: )
+      Post.where(id: id)
+    end
+
+    field :comments, [CommentType], null: false, description: 'List all comments'
+    def comments
+      Comment.all
+    end
+
+    field :commentById, [CommentType], null: false do
+      argument :id, String, required: true
+    end
+    def commentById(id: )
+      Comment.where(id: id)
+    end
   end
 end

@@ -7,8 +7,8 @@ module.exports = function (defaults) {
     // Add options here
     apollo: {
       include: ['apollo-link-batch-http'],
-      exclude: ['graphql-tag']
-    }
+      exclude: ['graphql-tag'],
+    },
   });
 
   return app.toTree();

@@ -1,57 +1,6 @@
 {{page-title "Toffeechat"}}
 
-<div class="site">
-    <div class="site-header-area">
-        <div class="mx-2 px-3 py-2 d-flex h-100 h-50p">
-            <div class="d-flex h-50p">
-                <img src="assets/icon-lg.png" class="pt-0 logo"/>
-            </div>
-            <div class="d-flex mt-1 ml-2 h-50p">
-                <div class="site-header h-100">
-                    Toffeechat
-                </div>
-            </div>
-            <div class="profile-box-container h-50p">
-                <div class="px-2 d-flex h-100 h-50p">
-                    <div class="d-flex h-50p align-items-center">
-                        <img src="assets/users/user-picture-guest.png" class="profile-avatar-image"/>
-                    </div>
-                    <div class="d-flex mx-2 h-50p align-items-center">
-                        <div class="profile-box-name align-items-center">
-                            Guest
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="site-body-area">
-        <div class="mx-2 px-3 py-2">
-            <div class="page-header mb-2">
-                Request
-            </div>
-            <label class="form-label">URL</label>
-            <div class="w-100 d-flex">
-                <div class="w-95 d-flex">
-                    <input class="request-input mb-3" value="http://localhost:3000/graphql">
-                </div>
-                <div class="w-10 ml-3 d-flex">
-                    <button class="request-button">Send</button>
-                </div>
-            </div>
-            <label class="form-label">Body</label>
-            <div class="w-100">
-                <textarea class="request-body-area mb-2"/>
-            </div>
-            <label class="form-label">Response</label>
-            <div class="w-100">
-                <textarea class="request-response-area mb-2"/>
-            </div>
-        </div>
-    </div>
-    
-</div>
+<Application />
 
 
 {{outlet}}

@@ -15,6 +15,9 @@ class GraphqlController < ApplicationController
       # current_user: current_user,
     }
     result = RubySchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+    
+    puts "Hello"
+    puts json: result
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?
