@@ -1209,3 +1209,442 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 1.2ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:02:55 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createUser(name: \"Calvin\", username: \"calvin345\", bio: \"Hi, I'm Calvin!\") {\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createUser(name: \"Calvin\", username: \"calvin345\", bio: \"Hi, I'm Calvin!\") {\n        name,\n        username\n    }\n}", "variables"=>{}}}
+undefined method `field' for module Types
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:4:in `<module:Types>'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:3:in `<main>'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `block (2 levels) in replace_require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/zeitwerk-2.6.18/lib/zeitwerk/kernel.rb:26:in `require'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/ruby_schema.rb:4:in `<class:RubySchema>'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/ruby_schema.rb:3:in `<main>'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/3.3.0/bundled_gems.rb:74:in `block (2 levels) in replace_require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/bootsnap-1.18.4/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/zeitwerk-2.6.18/lib/zeitwerk/kernel.rb:26:in `require'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/controllers/graphql_controller.rb:17:in `execute'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/basic_implicit_render.rb:8:in `send_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/base.rb:226:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/rendering.rb:193:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/callbacks.rb:261:in `block in process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/callbacks.rb:260:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/rescue.rb:27:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/notifications.rb:210:in `block in instrument'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/notifications.rb:210:in `instrument'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/abstract_controller/base.rb:163:in `process'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal.rb:252:in `dispatch'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_controller/metal.rb:335:in `dispatch'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/routing/route_set.rb:50:in `serve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:53:in `block in serve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:126:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:126:in `find_routes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/journey/router.rb:34:in `serve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/routing/route_set.rb:896:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/etag.rb:29:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/conditional_get.rb:43:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/head.rb:15:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/migration.rb:674:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/executor.rb:16:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/rack/logger.rb:41:in `call_app'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/rack/logger.rb:29:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/request_id.rb:33:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/runtime.rb:24:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/executor.rb:16:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/static.rb:27:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-3.1.7/lib/rack/sendfile.rb:114:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/actionpack-7.2.1/lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/rack-cors-2.0.2/lib/rack/cors.rb:102:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/railties-7.2.1/lib/rails/engine.rb:535:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/configuration.rb:272:in `call'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/request.rb:100:in `block in handle_request'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/request.rb:99:in `handle_request'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/server.rb:464:in `process_client'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/server.rb:245:in `block in run'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/puma-6.4.2/lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Completed 500 Internal Server Error in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:03:49 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createUser(name: \"Calvin\", username: \"calvin345\", bio: \"Hi, I'm Calvin!\") {\n        name,\n        username\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createUser(name: \"Calvin\", username: \"calvin345\", bio: \"Hi, I'm Calvin!\") {\n        name,\n        username\n    }\n}", "variables"=>{}}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:11:in `createUser'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password", "role", "created_at", "updated_at", "bio") VALUES ('Calvin', 'calvin345', NULL, NULL, NULL, '2024-09-09 14:03:49.748342', '2024-09-09 14:03:49.748342', 'Hi, I''m Calvin!') RETURNING "id" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createUser'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:11:in `createUser'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:11:in `createUser'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 3.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:04:00 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n    users {\n        name\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"{\n    users {\n        name\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:04:26 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"{\n    users {\n        id,\n        name\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"{\n    users {\n        id,\n        name\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:07:13 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:18: syntax error, unexpected ')'
+... def createPost(userId:,body:,)
+...                              ^
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:26: syntax error, unexpected `end'):
+  
+app/graphql/types/mutation_type.rb:18: syntax error, unexpected ')'
+app/graphql/types/mutation_type.rb:26: syntax error, unexpected `end'
+app/graphql/ruby_schema.rb:4:in `<class:RubySchema>'
+app/graphql/ruby_schema.rb:3:in `<main>'
+app/controllers/graphql_controller.rb:17:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:08:05 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+SyntaxError (/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:18: syntax error, unexpected ')'
+... def createPost(userId:,body:,)
+...                              ^
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:26: syntax error, unexpected `end'):
+  
+app/graphql/types/mutation_type.rb:18: syntax error, unexpected ')'
+app/graphql/types/mutation_type.rb:26: syntax error, unexpected `end'
+app/graphql/ruby_schema.rb:4:in `<class:RubySchema>'
+app/graphql/ruby_schema.rb:3:in `<main>'
+app/controllers/graphql_controller.rb:17:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:08:17 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:20:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at") VALUES (11, NULL, 'This is a post', '2024-09-09 14:08:17.111338', '2024-09-09 14:08:17.111338') RETURNING "id" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+unknown attribute 'status' for User.
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_assignment.rb:53:in `rescue in _assign_attribute'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_assignment.rb:15:in `block in _assign_attributes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_assignment.rb:9:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_assignment.rb:9:in `_assign_attributes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_assignment.rb:34:in `assign_attributes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:569:in `block in update'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:418:in `block (2 levels) in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:616:in `block in within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:613:in `within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/database_statements.rb:361:in `transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:414:in `block in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:395:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_handling.rb:296:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:410:in `with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:568:in `update'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:22:in `createPost'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:341:in `block in evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:810:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:288:in `evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:282:in `block in evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/arguments_cache.rb:46:in `block in dataload_for'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/member/has_arguments.rb:272:in `block (3 levels) in coerce_arguments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 42ms (Views: 0.2ms | ActiveRecord: 7.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:08:25 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:20:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at") VALUES (11, NULL, 'This is a post', '2024-09-09 14:08:25.862749', '2024-09-09 14:08:25.862749') RETURNING "id" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+wrong number of arguments (given 0, expected 1)
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:565:in `update'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:22:in `createPost'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:341:in `block in evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:810:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:288:in `evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:282:in `block in evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/arguments_cache.rb:46:in `block in dataload_for'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/member/has_arguments.rb:272:in `block (3 levels) in coerce_arguments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 16ms (Views: 0.1ms | ActiveRecord: 2.6ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:08:39 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:20:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at") VALUES (11, NULL, 'This is a post', '2024-09-09 14:08:39.660660', '2024-09-09 14:08:39.660660') RETURNING "id" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+When assigning attributes, you must pass a hash as an argument, Integer passed.
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_assignment.rb:30:in `assign_attributes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:569:in `block in update'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:418:in `block (2 levels) in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:616:in `block in within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:613:in `within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/database_statements.rb:361:in `transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:414:in `block in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:395:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_handling.rb:296:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:410:in `with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:568:in `update'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:22:in `createPost'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:341:in `block in evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:810:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:288:in `evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:282:in `block in evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/arguments_cache.rb:46:in `block in dataload_for'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/member/has_arguments.rb:272:in `block (3 levels) in coerce_arguments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 22ms (Views: 0.2ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 2.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:08:57 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:20:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at") VALUES (11, NULL, 'This is a post', '2024-09-09 14:08:58.012999', '2024-09-09 14:08:58.012999') RETURNING "id" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:21:in `createPost'
+unknown attribute 'status' for User.
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_assignment.rb:53:in `rescue in _assign_attribute'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_assignment.rb:15:in `block in _assign_attributes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_assignment.rb:9:in `each'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/attribute_assignment.rb:9:in `_assign_attributes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activemodel-7.2.1/lib/active_model/attribute_assignment.rb:34:in `assign_attributes'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:569:in `block in update'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:418:in `block (2 levels) in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:616:in `block in within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activesupport-7.2.1/lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/transaction.rb:613:in `within_new_transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/database_statements.rb:361:in `transaction'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:414:in `block in with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:395:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/connection_handling.rb:296:in `with_connection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/transactions.rb:410:in `with_transaction_returning_status'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/activerecord-7.2.1/lib/active_record/persistence.rb:568:in `update'
+/Users/kyleh/repos/toffee-chat/backend/ruby/app/graphql/types/mutation_type.rb:22:in `createPost'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `public_send'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:715:in `block (2 levels) in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:849:in `with_extensions'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:686:in `block in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:751:in `minimal_after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/query.rb:391:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:684:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:341:in `block in evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:810:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:288:in `evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:282:in `block in evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/arguments_cache.rb:46:in `block in dataload_for'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/member/has_arguments.rb:272:in `block (3 levels) in coerce_arguments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 17ms (Views: 0.1ms | ActiveRecord: 2.1ms (2 queries, 0 cached) | GC: 2.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:09:25 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createPost(userId: \"11\", body: \"This is a post\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:19:in `createPost'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 11 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:20:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:22:in `createPost'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "picture", "body", "created_at", "updated_at") VALUES (11, NULL, 'This is a post', '2024-09-09 14:09:25.752750', '2024-09-09 14:09:25.752750') RETURNING "id" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:22:in `createPost'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:22:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:23:in `createPost'
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createPost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:23:in `createPost'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:23:in `createPost'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 5.0ms (3 queries, 0 cached) | GC: 2.8ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:09:39 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username\n        posts\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username\n        posts\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:09:44 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        username\n        posts {\n            id,\n            body\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        username\n        posts {\n            id,\n            body\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.5ms (5 queries, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:12:36 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    createComment(userId: \"8\", postId: \"18\", body: \"Happy comment!\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    createComment(userId: \"8\", postId: \"18\", body: \"Happy comment!\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:33:in `createComment'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:33:in `createComment'
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 18 ORDER BY "posts"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:34:in `createComment'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 ORDER BY "users"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:35:in `createComment'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:39:in `createComment'
+  [1m[36mComment Create (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "post_id", "created_at", "updated_at", "body") VALUES (8, 18, '2024-09-09 14:12:36.968887', '2024-09-09 14:12:36.968887', 'Happy comment!') RETURNING "id" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:39:in `createComment'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:39:in `createComment'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:40:in `createComment'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 18 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:40:in `createComment'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:40:in `createComment'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:41:in `createComment'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.createComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:41:in `createComment'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:41:in `createComment'
+Completed 200 OK in 112ms (Views: 0.2ms | ActiveRecord: 13.4ms (5 queries, 0 cached) | GC: 9.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:12:54 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 16 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 17 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 18 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 19 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 20 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.1ms (15 queries, 0 cached) | GC: 0.9ms)
+
+
