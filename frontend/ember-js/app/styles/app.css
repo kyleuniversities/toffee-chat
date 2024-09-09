@@ -5,7 +5,8 @@
   --brown: rgb(200 120 0);
   --dark-brown: rgb(80 40 0);
   --light-brown: rgb(250 200 150);
-  --lighter-brown: rgb(252 220 210);
+  --lighter-brown: rgb(247 222 197);
+  --semi-dark-brown: rgb(150 80 60);
   --semi-light-brown: rgb(220 150 100);
   --semi-lighter-brown: rgb(251 210 200);
   --light-sky-blue: rgb(180 230 250);
@@ -185,5 +186,30 @@ body {
 }
 
 .transparent {
-  opacity: 0%;
+  opacity: 0;
+}
+
+/** Field Cards **/
+.field-card {
+  border: 1.5px solid var(--dark-brown);
+  border-radius: 20px;
+  background-color: var(--lighter-brown);
+  color: var(--var-brown);
+  width: 100%;
+}
+
+.field-card-header {
+  font-weight: 600;
+}
+
+.field-card-body {
+  font-weight: 400;
+}
+
+.field-card-lifted-space {
+  border-bottom: 1.5px solid var(--semi-dark-brown);
+}
+
+.field-card-bottom-space {
+  border-radius: 0;
 }

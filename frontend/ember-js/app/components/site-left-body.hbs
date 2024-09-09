@@ -1,4 +1,12 @@
-<div>
-    <p><b>{{ this.userData.name }}</b></p>
+<div class="w-100">
+    <FullFieldCard>
+        <FieldCardHeader>
+            <ProfileBoxContainer />
+        </FieldCardHeader>
+        <br />
+        <FieldCardBody>
+            {{ this.userData.bio }}
+        </FieldCardBody>
+    </FullFieldCard>
     <div class="transparent">{{ this.getUserInfo }}</div>
 </div>

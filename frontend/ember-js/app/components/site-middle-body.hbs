@@ -1,0 +1,15 @@
+<div class="w-100">
+    <div class="page-header">Posts</div>
+    <div class="w-100">
+        {{#if this.isLoading}}
+        <p>Loading posts...</p>
+        {{else}}
+            {{#each this.postsData as |post|}}
+                <Post @author={{post.id}} @body={{post.body}} />
+            {{/each}}
+        {{/if}}
+    </div>
+    <div class="transparent">
+        {{ this.getPostsInfo }}
+    </div>
+</div>

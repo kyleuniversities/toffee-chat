@@ -2,16 +2,19 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { queryManager } from 'ember-apollo-client';
-import query from '../gql/queries/user.graphql';
+import query from '../gql/queries/post.graphql';
 
-export default class SiteLeftBody extends Component {
+export default class SiteMiddleBody extends Component {
   @queryManager apollo;
 
-  @tracked userData = {};
+  @tracked isLoading = true;
+
+  @tracked postsData = [];
 
   @action
-  async getUserInfo() {
+  async getPostsInfo() {
     const result = await this.apollo.query({ query }, null);
-    this.userData = result.userById[0];
+    this.postsData = result.posts;
+    this.isLoading = false;
   }
 }

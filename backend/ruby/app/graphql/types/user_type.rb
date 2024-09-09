@@ -7,6 +7,7 @@ module Types
     field :username, String
     field :email, String
     field :password, String
+    field :bio, String
     field :role, String
     field :posts, [Types::PostType]
     field :comments, [Types::CommentType]

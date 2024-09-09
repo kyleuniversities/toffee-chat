@@ -2,6 +2,7 @@ query {
     userById(id: "9") {
         id,
         name,
-        username
+        username,
+        bio
     }
 }
