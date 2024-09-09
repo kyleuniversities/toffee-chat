@@ -2,6 +2,7 @@
 
 module Types
   class MutationType < Types::BaseObject
+      # Creation Fields
       field :createUser, UserType, null: false do
         argument :name, String, required: true
         argument :username, String, required: true
@@ -39,6 +40,39 @@ module Types
         userComments.append(comment)
         post.update(comments: postComments)
         user.update(comments: userComments)
+        comment
+      end
+
+      # Update Fields
+      field :updateUser, UserType, null: false do
+        argument :id, String, required: true
+        argument :name, String, required: true
+        argument :username, String, required: true
+        argument :bio, String, required: true
+      end
+      def updateUser(id:,name:,username:,bio:)
+        user = User.where(id: id).first
+        user.update name: name, username: username, bio: bio
+        user
+      end
+
+      field :updatePost, PostType, null: false do
+        argument :id, String, required: true
+        argument :body, String, required: true
+      end
+      def updatePost(id:,body:)
+        post = Post.where(id: id).first
+        post.update body: body
+        post
+      end
+
+      field :updateComment, CommentType, null: false do
+        argument :id, String, required: true
+        argument :body, String, required: true
+      end
+      def updateComment(id:,body:)
+        comment = Comment.where(id: id).first
+        comment.update body: body
         comment
       end
   end

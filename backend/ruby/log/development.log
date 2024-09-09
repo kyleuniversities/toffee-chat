@@ -1648,3 +1648,105 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 1.1ms (15 queries, 0 cached) | GC: 0.9ms)
 
 
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:16:51 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    updateComment(id: \"5\", body: \"xxx\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    updateComment(id: \"5\", body: \"xxx\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+Failed to call `:updateComment` on #<Types::MutationType:0x0000000123151660 @object=nil, @context=#<Query::Context ...>> because the Ruby method params were incompatible with the GraphQL arguments:
+
+- `id: 5` was given by GraphQL but not defined in the Ruby method. Add `id:` to the method parameters.
+
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:822:in `assert_satisfactory_implementation'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:772:in `rescue in resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/field.rb:675:in `resolve'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:375:in `block (2 levels) in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/tracing/trace.rb:52:in `execute_field'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:374:in `block in evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:696:in `call_method_on_directives'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:363:in `evaluate_selection_with_resolved_keyword_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:341:in `block in evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:810:in `after_lazy'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:288:in `evaluate_selection_with_args'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/runtime.rb:282:in `block in evaluate_selection'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/execution/interpreter/arguments_cache.rb:46:in `block in dataload_for'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/schema/member/has_arguments.rb:272:in `block (3 levels) in coerce_arguments'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:255:in `block in spawn_job_fiber'
+/Users/kyleh/.asdf/installs/ruby/3.3.3/lib/ruby/gems/3.3.0/gems/graphql-2.3.14/lib/graphql/dataloader.rb:238:in `block in spawn_fiber'
+Completed 500 Internal Server Error in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:17:08 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    updateComment(id: \"5\", body: \"xxx\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    updateComment(id: \"5\", body: \"xxx\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = 5 ORDER BY "comments"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.updateComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:74:in `updateComment'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:75:in `updateComment'
+  [1m[36mComment Update (0.4ms)[0m  [1m[33mUPDATE "comments" SET "updated_at" = '2024-09-09 14:17:08.410524', "body" = 'xxx' WHERE "comments"."id" = 5 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.updateComment'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:75:in `updateComment'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:75:in `updateComment'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:17:18 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.6ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:17:28 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 16 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 17 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 18 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 19 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 20 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 1.1ms (15 queries, 0 cached) | GC: 2.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:17:50 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n    updatePost(id: \"17\", body: \"yyy\") {\n        id,\n        body\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"mutation {\n    updatePost(id: \"17\", body: \"yyy\") {\n        id,\n        body\n    }\n}", "variables"=>{}}}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 17 ORDER BY "posts"."id" ASC LIMIT 1 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.updatePost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:64:in `updatePost'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:65:in `updatePost'
+  [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "body" = 'yyy', "updated_at" = '2024-09-09 14:17:50.083365' WHERE "posts"."id" = 17 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Mutation.updatePost'*/[0m
+  ↳ app/graphql/types/mutation_type.rb:65:in `updatePost'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/types/mutation_type.rb:65:in `updatePost'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2024-09-09 07:17:58 -0700
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}, "graphql"=>{"query"=>"query {\n    users {\n        id,\n        name,\n        posts {\n            id,\n            body,\n            comments {\n                id,\n                body\n            }\n        }\n    }\n}", "variables"=>{}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Query.users'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 8 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 9 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 10 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='User.posts'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 11 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 12 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 13 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 14 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 15 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 16 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 17 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 18 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 19 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 20 /*action='execute',application='Ruby',controller='graphql',current_graphql_field='Post.comments'*/[0m
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 1.2ms (15 queries, 0 cached) | GC: 6.2ms)
+
+
