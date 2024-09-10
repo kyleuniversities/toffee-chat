@@ -3,7 +3,7 @@
 module Types
   class PostType < Types::BaseObject
     field :id, ID, null: false
-    field :user, String
+    field :user, UserType
     field :picture, String
     field :kind, String
     field :body, String
