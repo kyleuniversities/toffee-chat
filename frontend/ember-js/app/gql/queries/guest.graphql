@@ -1,5 +1,5 @@
 query {
-    users {
+    userById(id: "33") {
         id,
         name,
         username,

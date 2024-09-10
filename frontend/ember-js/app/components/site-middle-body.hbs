@@ -5,7 +5,7 @@
         <p>Loading posts...</p>
         {{else}}
             {{#each this.postsData as |post|}}
-                <Post @author={{post.id}} @body={{post.body}} />
+                <Post @author={{post.user.name}} @body={{post.body}} @numberOfLikes={{post.numberOfLikes}} @numberOfComments={{post.numberOfComments}} />
             {{/each}}
         {{/if}}
     </div>

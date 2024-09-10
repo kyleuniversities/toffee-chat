@@ -6,7 +6,7 @@
   --dark-brown: rgb(80 40 0);
   --light-brown: rgb(250 200 150);
   --lighter-brown: rgb(247 222 197);
-  --semi-dark-brown: rgb(150 80 60);
+  --semi-dark-brown: rgb(160 90 70);
   --semi-light-brown: rgb(220 150 100);
   --semi-lighter-brown: rgb(251 210 200);
   --light-sky-blue: rgb(180 230 250);
@@ -61,6 +61,14 @@ body {
 
 .w-90 {
   width: 90%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-45 {
+  width: 45%;
 }
 
 .w-10 {
@@ -212,4 +220,12 @@ body {
 
 .field-card-bottom-space {
   border-radius: 0;
+}
+
+/** Post **/
+.post-avatar-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1.5px solid var(--dark-brown);
 }

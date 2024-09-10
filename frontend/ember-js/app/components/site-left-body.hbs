@@ -1,12 +1,30 @@
 <div class="w-100">
-    <FullFieldCard>
-        <FieldCardHeader>
-            <ProfileBoxContainer />
-        </FieldCardHeader>
-        <br />
-        <FieldCardBody>
-            {{ this.userData.bio }}
-        </FieldCardBody>
-    </FullFieldCard>
+    <div class="page-header">My Toffeechat</div>
+    <FieldCard>
+        <FieldCardLiftedSpace>
+            <FieldCardHeader>
+                <ProfileBoxContainer />
+            </FieldCardHeader>
+            <br />
+            <FieldCardBody>
+                {{ this.userData.bio }}
+            </FieldCardBody>
+        </FieldCardLiftedSpace>
+        <FieldCardLiftedSpace>
+            <div>
+                <b>Number of Posts: </b> {{this.userData.numberOfAuthoredPosts}}
+            </div>
+        </FieldCardLiftedSpace>
+        <FieldCardLiftedSpace>
+            <div>
+                <b>Number of Comments: </b> {{this.userData.numberOfReceivedComments}}
+            </div>
+        </FieldCardLiftedSpace>
+        <FieldCardBottomSpace>
+            <div>
+                <b>Number of Likes: </b> {{this.userData.numberOfReceivedLikes}}
+            </div>
+        </FieldCardBottomSpace>
+    </FieldCard>
     <div class="transparent">{{ this.getUserInfo }}</div>
 </div>

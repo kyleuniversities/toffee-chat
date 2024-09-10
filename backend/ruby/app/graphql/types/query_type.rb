@@ -22,11 +22,11 @@ module Types
     # They will be entry points for queries on your schema.
 
     # Test Fields
-    field :test, [UserType], null: false, description: 'Test'
+    field :test, [PostType], null: false, description: 'Test'
     def test
-      users = User.all
-      users[1].name = 'Guest 2'
-      users
+      items = Post.all
+      xxx = items.sort {|a,b| b.created_at <=> a.created_at }
+      xxx
     end
 
     # User Fields
@@ -51,7 +51,9 @@ module Types
     # Post Fields
     field :posts, [PostType], null: false, description: 'List all posts'
     def posts
-      Post.all
+      posts = Post.all
+      reversedPosts = posts.sort {|a,b| b.created_at <=> a.created_at }
+      reversedPosts
     end
     
     field :newsPosts, [PostType], null: false, description: 'List all news posts'
