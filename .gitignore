@@ -7,3 +7,5 @@ backend/ruby/config
 backend/ruby/tmp
 backend/ruby/log
 backend/ruby/storage
+
+frontend/angular-js/.vscode
