@@ -1,0 +1,14 @@
+<div class="w-100">
+    <div class="page-header">Posts</div>
+    <app-post-form />
+    <br />
+    <div class="w-100">
+        @if (this.isLoading) {
+            <p>Loading posts...</p>
+        } @else {
+            @for (post of postsData; track post) {
+                <app-post [postData]="post" [author]="post.user.name" [body]="post.body" [numberOfLikes]="post.numberOfLikes" [numberOfComments]="post.numberOfComments" [createdAtText]="post.createdAtText"/>
+            }
+        }
+    </div>
+</div>

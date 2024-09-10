@@ -1,1 +1,373 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+
+/** Root **/
+:root {
+    --red: rgb(220 53 69);
+    --dark-red: rgb(148 36 46);
+    --light-red: rgb(245 120 130);
+    --light-mix-red: rgb(245 170 164);
+    --brown: rgb(200 120 0);
+    --dark-brown: rgb(80 40 0);
+    --light-brown: rgb(250 200 150);
+    --lighter-brown: rgb(247 222 197);
+    --lighter-brown-2: rgb(245 235 226);
+    --semi-dark-brown: rgb(160 90 70);
+    --semi-light-brown: rgb(220 150 100);
+    --semi-lighter-brown: rgb(251 210 200);
+    --green: rgb(25 180 84);
+    --dark-green: rgb(17 120 56);
+    --light-green: rgb(129 229 167);
+    --light-mix-green: rgb(189 225 182);
+    --light-mix-green-2: rgb(189 232 197);
+    --light-sky-blue: rgb(180 230 250);
+    --sky-blue: rgb(120 200 250);
+    --dark-sky-blue: rgb(80 120 200);
+    --light-blue: rgb(155 195 255);
+    --light-mix-blue: rgb(200 208 226);
+    --blue: rgb(13 110 253);
+    --dark-blue: rgb(8 74 170);
+    --dark-gray: rgb(30 30 30);
+  }
+  
+  /** Body **/
+  body {
+    background-color: var(--light-brown);
+  }
+  
+  /** Logo **/
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /** Backgrounds **/
+  .bg-brown {
+    background-color: var(--brown);
+  }
+  
+  .bg-light-brown {
+    background-color: var(--light-brown);
+  }
+  
+  /** Sizes **/
+  .h-100 {
+    height: 100%;
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .w-98 {
+    width: 98%;
+  }
+  
+  .w-97 {
+    width: 97%;
+  }
+  
+  .w-96 {
+    width: 96%;
+  }
+  
+  .w-95 {
+    width: 95%;
+  }
+  
+  .w-90 {
+    width: 90%;
+  }
+  
+  .w-50 {
+    width: 50%;
+  }
+  
+  .w-45 {
+    width: 45%;
+  }
+  
+  .w-10 {
+    width: 10%;
+  }
+  
+  .w-09 {
+    width: 9%;
+  }
+  
+  .w-08 {
+    width: 8%;
+  }
+  
+  .w-07 {
+    width: 7%;
+  }
+  
+  .w-06 {
+    width: 6%;
+  }
+  
+  .w-05 {
+    width: 5%;
+  }
+  
+  .w-04 {
+    width: 4%;
+  }
+  
+  /** Weights **/
+  
+  .fw-500 {
+    font-weight: 500;
+  }
+  
+  .fw-600 {
+    font-weight: 600;
+  }
+  
+  /** Positioning **/
+  .flex-right {
+    margin-left: auto;
+    order: 2;
+  }
+  
+  /** Headers **/
+  .site-header-area {
+    border-bottom: 3px solid var(--dark-brown);
+  }
+  
+  .site-header {
+    font-family: cursive;
+    min-height: 50px;
+    height: 100%;
+    font-size: 30px;
+  }
+  
+  .page-header {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  
+  .post-form-header {
+    font-size: 18px;
+  }
+  
+  .comment-container-header {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  /** Bodies **/
+  .site-body-area {
+    margin: 0;
+  }
+  
+  /** Bodies **/
+  .form-label {
+    font-weight: 500;
+  }
+  
+  /** Profile Box Components **/
+  .profile-box-container {
+    margin-left: auto;
+    order: 2;
+  }
+  
+  .profile-avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1.5px solid var(--dark-brown);
+  }
+  
+  .profile-box-name {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  /** Request Components **/
+  .request-input {
+    width: 100%;
+  }
+  
+  .request-button {
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--dark-sky-blue);
+    border-radius: 5px;
+    background-color: var(--light-sky-blue);
+  }
+  
+  .request-button:hover {
+    background-color: var(--sky-blue);
+  }
+  
+  .request-body-area {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .request-response-area {
+    width: 100%;
+    height: 300px;
+  }
+  
+  /** Body **/
+  .site-body {
+    border-radius: 0;
+  }
+  
+  .site-left-body {
+    border-radius: 0;
+    width: 20%;
+    height: 300px;
+  }
+  
+  .site-middle-body {
+    border-radius: 0;
+    width: 60%;
+    min-height: 660px;
+  }
+  
+  .site-right-body {
+    border-radius: 0;
+    width: 20%;
+    height: 300px;
+  }
+  
+  .transparent {
+    opacity: 0;
+  }
+  
+  /** Field Cards **/
+  .field-card {
+    border: 1.5px solid var(--dark-brown);
+    border-radius: 0px;
+    background-color: var(--lighter-brown);
+    color: var(--var-brown);
+    width: 100%;
+  }
+  
+  .field-card-header {
+    font-weight: 600;
+  }
+  
+  .field-card-body {
+    width: 100%;
+    font-weight: 400;
+  }
+  
+  .field-card-top-space {
+    border-radius: 0;
+  }
+  
+  .field-card-lifted-space {
+    border-top: 1.5px solid var(--semi-dark-brown);
+    border-radius: 0;
+  }
+  
+  .field-card-bottom-space {
+    border-top: 1.5px solid var(--semi-dark-brown);
+  }
+  
+  .field-card-extended-bottom-space {
+    background-color: var(--light-mix-green-2);
+    border-bottom-right-radius: 19px;
+    border-bottom-left-radius: 19px;
+    border-top: 1.5px solid black;
+  }
+  
+  .field-area {
+    border-radius: 0px;
+    justify-content: center;
+    width: 96%;
+    margin-left: 2%;
+  }
+  
+  .field-area-delete {
+    padding-top: 2px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    align-items: center;
+    margin-left: 0%;
+  }
+  
+  /** Color Options **/
+  
+  .option-blue:hover {
+    background-color: var(--light-mix-blue);
+  }
+  
+  .option-green:hover {
+    background-color: var(--light-mix-green);
+  }
+  
+  .option-red:hover {
+    background-color: var(--light-mix-red);
+  }
+  
+  /** Post **/
+  .post-avatar-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 0px;
+    border: 1.5px solid var(--dark-brown);
+  }
+  
+  .post-form-field {
+    width: 100%;
+    border-radius: 0px;
+    border: 1.5px solid var(--dark-brown);
+  }
+  
+  .post-form-button {
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--dark-sky-blue);
+    border-radius: 0px;
+    background-color: var(--light-sky-blue);
+  }
+  
+  .post-form-button:hover {
+    background-color: var(--sky-blue);
+  }
+  
+  /** Text **/
+  .text-blue {
+    color: var(--blue);
+    font-weight: 600;
+  }
+  
+  .text-blue:hover {
+    color: var(--dark-blue);
+    font-weight: 700;
+  }
+  
+  .text-green {
+    color: var(--green);
+    font-weight: 600;
+  }
+  
+  .text-green:hover {
+    color: var(--dark-green);
+    font-weight: 700;
+  }
+  
+  .text-red {
+    color: var(--red);
+    font-weight: 600;
+  }
+  
+  .text-red:hover {
+    color: var(--dark-red);
+    font-weight: 700;
+  }
+  
+  .sub-text {
+    color: var(--dark-gray);
+  }
+  
+  .sub-comment-text {
+    color: var(--dark-green);
+  }
+  

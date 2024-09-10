@@ -1,0 +1,10 @@
+<div class="w-100 h-100">
+    <div class="comment-container-header align-items-center">
+        Comments:
+    </div>
+    <app-comment-form [postData]="this.postData" />
+    <br />
+    @for (comment of comments; track comment) {
+        <app-comment [commentData]="comment" [author]="comment.user.name" [body]="comment.body" [createdAtText]="comment.createdAtText" />
+    }
+</div>

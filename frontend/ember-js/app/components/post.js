@@ -18,7 +18,7 @@ export default class Post extends Component {
 
   @action
   async likeUnlikePost() {
-    const variables = { postId: this.args.postData.id };
+    const variables = { userId: "33", postId: this.args.postData.id };
     await this.apollo.mutate({ mutation: likeMutation, variables }, null);
     window.location.reload(true);
   }

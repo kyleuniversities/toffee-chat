@@ -1,5 +1,5 @@
-mutation($body: String!) {
-    createPost(userId: "33", body: $body) {
+mutation($userId: String!, $body: String!) {
+    createPost(userId: $userId, body: $body) {
         id,
         body,
         numberOfLikes,

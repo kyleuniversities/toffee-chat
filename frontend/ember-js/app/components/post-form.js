@@ -14,7 +14,7 @@ export default class PostForm extends Component {
 
   @action
   async createPost() {
-    const variables = { body: this.postBody };
+    const variables = { userId: "33", body: this.postBody };
     if (!this.postBody) {
       alert('Post body must not be blank.');
     }
