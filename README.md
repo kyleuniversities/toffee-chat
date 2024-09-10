@@ -1,5 +1,5 @@
-# Toffeechat
-An online application dedicated to allowing users to have pleasurable conversations online!
+# Toffeechat v1
+An online application dedicated to allowing users to have pleasurable conversations online!  At the current stage, Toffeechat's functionality is developed as a social media website where users can make posts, likes, and comments.  Toffeechat is an application designed to exhibit the usage of GraphQL. 
 
 &nbsp;
 
