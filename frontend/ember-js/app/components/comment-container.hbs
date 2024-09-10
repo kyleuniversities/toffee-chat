@@ -1,0 +1,10 @@
+<div class="w-100 h-100">
+    <div class="comment-container-header align-items-center">
+        Comments:
+    </div>
+    <CommentForm @postData={{@postData}} />
+    <br />
+    {{#each @comments as |comment|}}
+        <Comment @commentData={{comment}} @author={{comment.user.name}} @body={{comment.body}} @createdAtText={{comment.createdAtText}} />
+    {{/each}}
+</div>

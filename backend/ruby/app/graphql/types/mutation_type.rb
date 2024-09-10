@@ -82,6 +82,7 @@ module Types
       end
       def deleteUser(id:)
         user = User.where(id: id).first
+        user.likes.destroy_all
         user.comments.destroy_all
         user.posts.destroy_all
         User.where(id: id).destroy_all
@@ -94,6 +95,7 @@ module Types
       def deletePost(id:)
         post = Post.where(id: id).first
         post.comments.destroy_all
+        post.likes.destroy_all
         Post.where(id: id).destroy_all
         post
       end
@@ -105,6 +107,54 @@ module Types
         comment = Comment.where(id: id).first
         Comment.where(id: id).destroy_all
         comment
+      end
+
+      # Toggle Fields
+      field :likeUnlikePost, LikeType, null: false do
+        argument :userId, String, required: true
+        argument :postId, String, required: true
+      end
+      def likeUnlikePost(userId:,postId:)
+        post = Post.where(id: postId).first
+        user = User.where(id: userId).first
+        postLikes = post.likes
+        userLikes = user.likes
+        matchingLikes = []
+        for postLike in postLikes do 
+          if postLike.post.id.to_s == postId && postLike.user.id.to_s == userId
+            matchingLikes.append(postLike)
+          end
+        end
+        like = Like.create
+        if matchingLikes.length() == 0
+          postLikes.append(like)
+          userLikes.append(like)
+        else
+          like = matchingLikes[0]
+          # Destroy all likes
+          for matchingLike in matchingLikes do
+            matchingLike.destroy
+          end
+          # # Delete post likes
+          # newPostLikes = []
+          # for postLike in postLikes do 
+          #   if !postLike.post.id.to_s == postId || !postLike.user.id.to_s == userId
+          #     newPostLikes.append(postLike)
+          #   end
+          # end
+          # postLikes = newPostLikes
+          # # Delete user likes
+          # newUserLikes = []
+          # for userLike in userLikes do 
+          #   if !userLike.post.id == postId || !userLike.user.id == userId
+          #     newUserLikes.append(userLike)
+          #   end
+          # end
+          # userLikes = newUserLikes
+        end
+        post.update(likes: postLikes)
+        user.update(likes: userLikes)
+        like
       end
   end
 end

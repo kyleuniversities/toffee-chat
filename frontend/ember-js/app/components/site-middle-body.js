@@ -13,7 +13,8 @@ export default class SiteMiddleBody extends Component {
 
   @action
   async getPostsInfo() {
-    const result = await this.apollo.query({ query }, null);
+    const variables = { userId: '33' };
+    const result = await this.apollo.query({ query, variables }, null);
     this.postsData = result.posts;
     this.isLoading = false;
   }

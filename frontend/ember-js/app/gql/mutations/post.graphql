@@ -1,16 +1,11 @@
-query {
-    newsPosts {
+mutation($body: String!) {
+    createPost(userId: "33", body: $body) {
         id,
         body,
         numberOfLikes,
         numberOfComments,
-        createdAtText,
         user {
-            id,
             name
-        },
-        likes {
-            userId
         }
     }
 }

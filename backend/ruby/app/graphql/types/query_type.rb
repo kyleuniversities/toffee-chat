@@ -49,8 +49,10 @@ module Types
     # end
 
     # Post Fields
-    field :posts, [PostType], null: false, description: 'List all posts'
-    def posts
+    field :posts, [PostType], null: false  do
+      argument :userId, String, required: true
+    end
+    def posts(userId:)
       posts = Post.all
       reversedPosts = posts.sort {|a,b| b.created_at <=> a.created_at }
       reversedPosts

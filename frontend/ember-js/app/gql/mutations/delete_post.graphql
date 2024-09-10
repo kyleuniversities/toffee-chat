@@ -1,0 +1,6 @@
+mutation($postId: String!) {
+    deletePost(id: $postId) {
+        id,
+        body
+    }
+}

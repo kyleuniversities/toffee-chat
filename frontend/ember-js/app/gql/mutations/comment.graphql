@@ -1,0 +1,6 @@
+mutation($postId: String!, $body: String!) {
+    createComment(userId: "33", postId: $postId, body: $body) {
+        id,
+        body
+    }
+}

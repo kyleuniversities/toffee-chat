@@ -1,11 +1,13 @@
 <div class="w-100">
     <div class="page-header">Posts</div>
+    <PostForm />
+    <br />
     <div class="w-100">
         {{#if this.isLoading}}
         <p>Loading posts...</p>
         {{else}}
             {{#each this.postsData as |post|}}
-                <Post @author={{post.user.name}} @body={{post.body}} @numberOfLikes={{post.numberOfLikes}} @numberOfComments={{post.numberOfComments}} />
+                <Post @postData={{post}} @author={{post.user.name}} @body={{post.body}} @numberOfLikes={{post.numberOfLikes}} @numberOfComments={{post.numberOfComments}} @createdAtText={{post.createdAtText}} />
             {{/each}}
         {{/if}}
     </div>
