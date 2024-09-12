@@ -3,9 +3,8 @@ notes
 ignore
 .env
 
-backend/ruby/config
-backend/ruby/tmp
-backend/ruby/log
-backend/ruby/storage
+server/ruby/config
+server/ruby/tmp
+server/ruby/log
 
-frontend/angular-js/.vscode
+client/angular-js/.vscode
