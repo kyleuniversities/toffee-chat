@@ -11,9 +11,12 @@
   --light-brown: rgb(250 200 150);
   --lighter-brown: rgb(247 222 197);
   --lighter-brown-2: rgb(245 235 226);
+  --lighter-brown-3: rgb(253 244 235);
+  --semi-semi-dark-brown: rgb(140 70 0);
   --semi-dark-brown: rgb(160 90 70);
   --semi-light-brown: rgb(220 150 100);
   --semi-lighter-brown: rgb(251 210 200);
+  --semi-lighter-brown-2: rgb(246 228 213);
   --green: rgb(25 180 84);
   --dark-green: rgb(17 120 56);
   --light-green: rgb(129 229 167);
@@ -135,11 +138,26 @@ body {
   border-bottom: 3px solid var(--dark-brown);
 }
 
+.site-header-link {
+  text-decoration: none;
+}
+
+.site-header-link:hover {
+  text-decoration: none;
+}
+
 .site-header {
   font-family: cursive;
   min-height: 50px;
   height: 100%;
   font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+a .site-header:hover {
+  color: black;
+  text-decoration: none;
 }
 
 .page-header {
@@ -176,6 +194,10 @@ body {
   min-width: 140px;
   padding-left: 0;
   border-bottom-left-radius: 0;
+}
+
+.profile-box-container:hover {
+  background-color: var(--semi-lighter-brown-2);
 }
 
 .profile-container {
@@ -411,4 +433,41 @@ body {
 
 .sub-comment-text {
   color: var(--dark-green);
+}
+
+/** Entry Form **/
+.entry-form-page {
+  background-color: var(--semi-semi-dark-brown);
+  height: 100vh;
+  padding-top: 14vh;
+}
+
+.entry-form-middle-body {
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 0;
+  width: 50%;
+}
+
+.entry-form-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.entry-form-button {
+  width: 100%;
+  height: 45px;
+  border: 2px solid var(--dark-sky-blue);
+  border-radius: 30px;
+  background-color: var(--light-sky-blue);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.entry-form-button:hover {
+  background-color: var(--sky-blue);
+}
+
+#login-password-container {
+  margin-bottom: 10px;
 }

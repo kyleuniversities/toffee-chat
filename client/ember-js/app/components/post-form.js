@@ -17,7 +17,7 @@ export default class PostForm extends Component {
     const variables = { userId: '33', body: this.postBody };
     if (!this.postBody) {
       alert('Post body must not be blank.');
-      return
+      return;
     }
     await this.apollo.mutate({ mutation, variables }, null);
     window.location.reload(true);
