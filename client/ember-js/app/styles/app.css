@@ -436,10 +436,19 @@ a .site-header:hover {
 }
 
 /** Entry Form **/
-.entry-form-page {
+.login-form-page, .registration-form-page {
   background-color: var(--semi-semi-dark-brown);
   height: 100vh;
-  padding-top: 14vh;
+}
+
+.login-form-page {
+  padding-top: 24vh;
+  padding-bottom: 26vh;
+}
+
+.registration-form-page {
+  padding-top: 11vh;
+  padding-bottom: 10vh;
 }
 
 .entry-form-middle-body {
