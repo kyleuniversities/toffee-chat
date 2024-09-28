@@ -64,7 +64,7 @@ export default class Post extends Component {
   }
 
   containsUserComment() {
-    if (this.args.postData && this.args.postData.comments) {
+    if (this.args.postData && !this.args.isConservative && this.args.postData.comments) {
       for (let comment of this.args.postData.comments) {
         if (comment.user.id === '33') {
           return true;

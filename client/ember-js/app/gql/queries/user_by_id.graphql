@@ -9,5 +9,28 @@ query($userId: String!) {
         numberOfAuthoredLikes,
         numberOfReceivedComments,
         numberOfReceivedLikes,
+        posts {
+            id,
+            body,
+            numberOfLikes,
+            numberOfComments,
+            createdAtText,
+            user {
+                id,
+                name
+            },
+            comments {
+                id,
+                body,
+                createdAtText,
+                user {
+                    id,
+                    name
+                }
+            },
+            likes {
+                userId
+            }
+        }
     }
 }
