@@ -11,7 +11,7 @@ export default class SiteLeftBody extends Component {
 
   @action
   async getUserInfo() {
-    const variables = { userId: "33" }
+    const variables = { userId: '33' };
     const result = await this.apollo.query({ query, variables }, null);
     this.userData = result.userById[0];
   }

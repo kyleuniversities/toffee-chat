@@ -11,7 +11,11 @@ export default class CommentForm extends Component {
 
   @action
   async createComment() {
-    const variables = { userId: "33", postId: this.args.postData.id, body: this.commentBody };
+    const variables = {
+      userId: '33',
+      postId: this.args.postData.id,
+      body: this.commentBody,
+    };
     if (!this.commentBody) {
       alert('Comment body must not be blank.');
     }

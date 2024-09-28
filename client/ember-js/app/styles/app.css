@@ -170,6 +170,19 @@ body {
 .profile-box-container {
   margin-left: auto;
   order: 2;
+  background-color: var(--lighter-brown);
+  border: 1.5px solid var(--dark-brown);
+  border-radius: 35px;
+  min-width: 140px;
+  padding-left: 0;
+  border-bottom-left-radius: 0;
+}
+
+.profile-container {
+  margin-left: auto;
+  order: 2;
+  min-width: 140px;
+  padding-left: 0;
 }
 
 .profile-avatar-image {
@@ -182,6 +195,35 @@ body {
 .profile-box-name {
   font-size: 20px;
   font-weight: 600;
+}
+
+.profile-box-menu-show {
+  height: 400px;
+}
+
+#profile-box-dropdown-menu {
+  display: none;
+  position: absolute;
+  margin-left: -1.5px;
+  padding-left: 0;
+  background-color: var(--lighter-brown);
+  overflow: auto;
+  z-index: 1;
+}
+
+#profile-box-dropdown-menu .dropdown-item {
+  border-left: 1.5px solid var(--dark-brown);
+  border-right: 1.5px solid var(--dark-brown);
+  border-bottom: 1.5px solid var(--dark-brown);
+  background-color: var(--lighter-brown-2);
+}
+
+#profile-box-dropdown-menu .dropdown-item:hover {
+  background-color: white;
+}
+
+.profile-box-show #profile-box-dropdown-menu {
+  display: block;
 }
 
 /** Request Components **/
