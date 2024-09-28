@@ -3,7 +3,7 @@
         <FieldCardTopSpace>
             <FieldCardHeader>
                 <div class="d-flex">
-                    <PostAuthorContainer @author={{@author}} />
+                    <PostAuthorContainer @postData={{@postData}} @author={{@author}} />
                     {{#if this.isDeletable}}
                         <PostDeletionContainer @deletePost={{this.deletePost}} />
                     {{/if}}

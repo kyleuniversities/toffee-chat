@@ -1,0 +1,13 @@
+query($userId: String!) {
+    userById(id: $userId) {
+        id,
+        name,
+        username,
+        bio,
+        numberOfAuthoredPosts,
+        numberOfAuthoredComments,
+        numberOfAuthoredLikes,
+        numberOfReceivedComments,
+        numberOfReceivedLikes,
+    }
+}

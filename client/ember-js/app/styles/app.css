@@ -138,14 +138,6 @@ body {
   border-bottom: 3px solid var(--dark-brown);
 }
 
-.site-header-link {
-  text-decoration: none;
-}
-
-.site-header-link:hover {
-  text-decoration: none;
-}
-
 .site-header {
   font-family: cursive;
   min-height: 50px;
@@ -182,6 +174,17 @@ a .site-header:hover {
 /** Bodies **/
 .form-label {
   font-weight: 500;
+}
+
+/** Links **/
+.text-link {
+  text-decoration: none;
+  color: black;
+}
+
+.text-link:hover {
+  text-decoration: none;
+  color: black;
 }
 
 /** Profile Box Components **/
@@ -436,7 +439,8 @@ a .site-header:hover {
 }
 
 /** Entry Form **/
-.login-form-page, .registration-form-page {
+.login-form-page,
+.registration-form-page {
   background-color: var(--semi-semi-dark-brown);
   height: 100vh;
 }
@@ -479,4 +483,11 @@ a .site-header:hover {
 
 #login-password-container {
   margin-bottom: 10px;
+}
+
+/** Profile Page Components **/
+.profile-page-body {
+  border-radius: 0;
+  width: 75%;
+  height: 300px;
 }

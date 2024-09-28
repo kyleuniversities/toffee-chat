@@ -1,0 +1,32 @@
+<div class="profile-page-body w-100">
+    <div class="w-100">
+        <div class="page-header">{{this.userProfileData.name}}</div>
+        <FieldCard>
+            <FieldCardTopSpace>
+                <FieldCardHeader>
+                    <ProfileContainer />
+                </FieldCardHeader>
+                <br />
+                <FieldCardBody>
+                    {{ this.userData.bio }}
+                </FieldCardBody>
+            </FieldCardTopSpace>
+            <FieldCardLiftedSpace>
+                <div>
+                    <b>Number of Posts: </b> {{this.userData.numberOfAuthoredPosts}}
+                </div>
+            </FieldCardLiftedSpace>
+            <FieldCardLiftedSpace>
+                <div>
+                    <b>Number of Comments: </b> {{this.userData.numberOfReceivedComments}}
+                </div>
+            </FieldCardLiftedSpace>
+            <FieldCardBottomSpace>
+                <div>
+                    <b>Number of Likes: </b> {{this.userData.numberOfReceivedLikes}}
+                </div>
+            </FieldCardBottomSpace>
+        </FieldCard>
+        <div class="transparent">{{ this.getUserById }}</div>
+    </div>
+</div>
