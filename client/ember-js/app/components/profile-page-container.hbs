@@ -2,15 +2,9 @@
     <div class="w-100">
         <div class="page-header">{{this.userProfileData.name}}</div>
         <FieldCard>
-            <FieldCardTopSpace>
-                <FieldCardHeader>
-                    <ProfileContainer />
-                </FieldCardHeader>
-                <br />
-                <FieldCardBody>
-                    {{ this.userData.bio }}
-                </FieldCardBody>
-            </FieldCardTopSpace>
+            <div class="profile-page-cover-image-container">
+                <img src="/assets/covers/lake-sky/index.png" class="profile-page-cover-image" alt="cover"/> 
+            </div>
             <FieldCardLiftedSpace>
                 <div>
                     <b>Number of Posts: </b> {{this.userData.numberOfAuthoredPosts}}
