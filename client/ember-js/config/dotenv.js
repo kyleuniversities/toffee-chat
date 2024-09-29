@@ -1,14 +1,14 @@
 /* eslint-env node */
 
-"use strict";
+'use strict';
 
-const path = require("path");
+const path = require('path');
 
 module.exports = function (/* env */) {
   return {
-    clientAllowedKeys: ["EMBER_HOST", "API_HOST"],
+    clientAllowedKeys: ['EMBER_HOST', 'API_HOST'],
     fastbootAllowedKeys: [],
     failOnMissingKey: false,
-    path: path.join(path.dirname(__dirname), ".env"),
+    path: path.join(path.dirname(__dirname), '.env'),
   };
 };

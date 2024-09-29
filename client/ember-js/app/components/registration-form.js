@@ -1,7 +1,7 @@
-import Component from "@glimmer/component";
-import { action } from "@ember/object";
-import { queryManager } from "ember-apollo-client";
-import mutation from "../gql/mutations/comment.graphql";
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { queryManager } from 'ember-apollo-client';
+import mutation from '../gql/mutations/comment.graphql';
 
 export default class RegistrationForm extends Component {
   @queryManager apollo;

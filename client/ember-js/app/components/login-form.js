@@ -1,9 +1,9 @@
-import Component from "@glimmer/component";
-import { action } from "@ember/object";
-import { queryManager } from "ember-apollo-client";
-import { inject as service } from "@ember/service";
-import mutation from "../gql/mutations/comment.graphql";
-import ENV from "../config/environment";
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { queryManager } from 'ember-apollo-client';
+import { inject as service } from '@ember/service';
+import mutation from '../gql/mutations/comment.graphql';
+import ENV from '../config/environment';
 
 export default class LoginForm extends Component {
   @queryManager apollo;
@@ -16,10 +16,11 @@ export default class LoginForm extends Component {
     const email = this.args.email;
     const password = this.args.password;
     try {
-      await this.session.authenticate("authenticator:oauth", email, password);
-      alert("Authenticated");
+      await this.session.authenticate('authenticator:oauth', email, password);
+      alert('Authenticated');
+      this.router.transitionTo('/');
     } catch (error) {
-      alert("Invalid credentials: Please try again.");
+      alert('Invalid credentials: Please try again.');
     }
   }
 }

@@ -7,6 +7,7 @@ class GraphqlController < ApplicationController
   # protect_from_forgery with: :null_session
 
   def execute
+    puts "\n\n\nHEADERS_2:\n\"#{request.headers}\", \"#{request.headers["Authorization"]}\"\n\n\n"
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
