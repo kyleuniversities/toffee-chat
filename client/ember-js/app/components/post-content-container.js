@@ -1,11 +1,11 @@
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
-import { queryManager } from 'ember-apollo-client';
-import { inject as service } from '@ember/service';
-import EmberObject from '@ember/object';
-import likeMutation from '../gql/mutations/like_unlike.graphql';
-import deleteMutation from '../gql/mutations/delete_post.graphql';
+import Component from "@glimmer/component";
+import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
+import { queryManager } from "ember-apollo-client";
+import { inject as service } from "@ember/service";
+import EmberObject from "@ember/object";
+import likeMutation from "../gql/mutations/like_unlike.graphql";
+import deleteMutation from "../gql/mutations/delete_post.graphql";
 
 export default class PostContentContainer extends Component {
   @queryManager apollo;
@@ -14,7 +14,7 @@ export default class PostContentContainer extends Component {
 
   @action
   async likeUnlikePost() {
-    const variables = { userId: '33', postId: this.args.postData.id };
+    const variables = { userId: "33", postId: this.args.postData.id };
     await this.apollo.mutate({ mutation: likeMutation, variables }, null);
     window.location.reload(true);
   }
@@ -29,7 +29,7 @@ export default class PostContentContainer extends Component {
     if (this.args.postData) {
       const likes = this.args.postData.likes;
       for (let like of likes) {
-        if (like.userId === '33') {
+        if (like.userId === "33") {
           matchingLikes.push(like);
         }
       }

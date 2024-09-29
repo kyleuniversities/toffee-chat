@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Like.destroy_all
 Comment.destroy_all
 Post.destroy_all
 User.destroy_all
@@ -17,7 +18,7 @@ users = User.create!([
         name: "Adam",
         username: "adam234",
         email: "adam234@example.com",
-        password: "adam234%",
+        password: "adam234&&",
         bio: "Hi everyone, I'm Adam.  I'm considered to be good at mountain climbing"
     },
     {

@@ -1,17 +1,17 @@
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
-import { queryManager } from 'ember-apollo-client';
-import query from '../gql/queries/requester.graphql';
+import Component from "@glimmer/component";
+import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
+import { queryManager } from "ember-apollo-client";
+import query from "../gql/queries/requester.graphql";
 
 export default class Application extends Component {
   @queryManager apollo;
 
-  @tracked requestUrl = 'http://localhost:3000/graphql';
+  @tracked requestUrl = "http://localhost:3000/graphql";
 
-  @tracked requestBody = '';
+  @tracked requestBody = "";
 
-  @tracked requestResponse = '';
+  @tracked requestResponse = "";
 
   @action
   setRequestUrl(value) {

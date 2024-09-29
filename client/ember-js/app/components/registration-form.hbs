@@ -1,0 +1,73 @@
+<div class="site-body registration-form-page">
+  <div class="entry-form-middle-body d-flex px-2">
+    <FullFieldCard>
+      <FieldCardHeader>
+        <div class="d-flex">
+          <div class="d-flex h-100 h-50p mb-2">
+            <div class="d-flex mx-2 h-50p align-items-center">
+              <div class="entry-form-title align-items-center">
+                Create Account
+              </div>
+            </div>
+          </div>
+        </div>
+      </FieldCardHeader>
+      <FieldCardBody class="mx-2 d-block">
+        <div class="mx-2">
+          <div class="mb-3 mt-1">
+            <b>Name:</b>
+            <Input
+              id="registration-name-field"
+              class="post-form-field px-2 mb-2"
+              placeholder="Enter your name"
+              @value={{@name}}
+            />
+            <br />
+            <br />
+            <b>Username:</b>
+            <Input
+              id="registration-username-field"
+              class="post-form-field px-2 mb-2"
+              placeholder="Enter your username"
+              @value={{@username}}
+            />
+            <br />
+            <br />
+            <b>Email:</b>
+            <Input
+              id="registration-email-field"
+              class="post-form-field px-2 mb-2"
+              placeholder="Enter your email"
+              @value={{@email}}
+            />
+            <br />
+            <br />
+            <b>Password:</b>
+            <Input
+              id="registration-password-field"
+              @type="password"
+              class="post-form-field px-2 mb-2"
+              placeholder="Enter your password"
+              @value={{@password}}
+            />
+            <br />
+            <br />
+            <b>Confirm Password:</b>
+            <Input
+              id="registration-confirm-password-field"
+              @type="password"
+              class="post-form-field px-2 mb-2"
+              placeholder="Confirm password"
+              @value={{@confirmPassword}}
+            />
+          </div>
+          <button
+            class="entry-form-button"
+            type="button"
+            onclick={{this.register}}
+          >Log In</button>
+        </div>
+      </FieldCardBody>
+    </FullFieldCard>
+  </div>
+</div>

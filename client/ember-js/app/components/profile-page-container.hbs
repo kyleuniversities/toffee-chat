@@ -1,53 +1,71 @@
 <div class="profile-page-body w-100">
-    <div class="w-100">
-        <div class="page-header">{{this.userProfileData.name}}</div>
-        <FieldCard>
-            <div class="profile-page-cover-image-container">
-                <img src="/assets/covers/lake-sky/index.png" class="profile-page-cover-image" alt="cover"/> 
+  <div class="w-100">
+    <div class="page-header">{{this.userProfileData.name}}</div>
+    <FieldCard>
+      <div class="profile-page-cover-image-container">
+        <img
+          src="/assets/covers/lake-sky/index.png"
+          class="profile-page-cover-image"
+          alt="cover"
+        />
+      </div>
+      <FieldCardBottomSpace>
+        <div class="px-2 d-flex h-100 h-50p">
+          <div class="d-flex h-50p align-items-center">
+            <img
+              src="/assets/users/user-picture-guest.png"
+              class="profile-avatar-image"
+              alt="profile"
+            />
+          </div>
+          <div class="d-flex mx-2 h-50p align-items-center">
+            <div class="profile-box-name align-items-center">
+              {{this.userProfileData.username}}
             </div>
-            <FieldCardBottomSpace>
-                <div class="px-2 d-flex h-100 h-50p">
-                    <div class="d-flex h-50p align-items-center">
-                        <img src="/assets/users/user-picture-guest.png" class="profile-avatar-image" alt="profile"/>
-                    </div>
-                    <div class="d-flex mx-2 h-50p align-items-center">
-                        <div class="profile-box-name align-items-center">
-                            {{this.userProfileData.username}}
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="px-2">
-                    {{this.userProfileData.bio}}
-                </div>
-                <br />
-                <div class="d-flex justify-content-center">
-                    <div class="d-inline-flex w-50 justify-content-center">
-                        <FieldCardBody>
-                            <div class="d-flex field-area py-1">
-                                <div class="d-flex">
-                                    <b>Number of Posts: </b> &nbsp;{{this.userProfileData.numberOfAuthoredPosts}}
-                                </div>
-                            </div>
-                        </FieldCardBody>
-                    </div>
-                    <div class="d-inline-flex w-50 justify-content-center">
-                        <FieldCardBody>
-                            <div class="d-flex field-area py-1">
-                                <div class="d-flex">
-                                    <b>Number of Likes: </b> &nbsp;{{this.userProfileData.numberOfReceivedLikes}}
-                                </div>
-                            </div>
-                        </FieldCardBody>
-                    </div>
-                </div>
-            </FieldCardBottomSpace>
-        </FieldCard>
+          </div>
+        </div>
         <br />
-        <div class="page-header">Posts</div>
-        {{#each this.userProfileData.posts as |post|}}
-            <Post @postData={{post}} @author={{post.user.name}} @body={{post.body}} @numberOfLikes={{post.numberOfLikes}} @numberOfComments={{post.numberOfComments}} @createdAtText={{post.createdAtText}} @isConservative={{true}} />
-        {{/each}}
-        <div class="transparent">{{ this.getUserById }}</div>
-    </div>
+        <div class="px-2">
+          {{this.userProfileData.bio}}
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <div class="d-inline-flex w-50 justify-content-center">
+            <FieldCardBody>
+              <div class="d-flex field-area py-1">
+                <div class="d-flex">
+                  <b>Number of Posts: </b>
+                  &nbsp;{{this.userProfileData.numberOfAuthoredPosts}}
+                </div>
+              </div>
+            </FieldCardBody>
+          </div>
+          <div class="d-inline-flex w-50 justify-content-center">
+            <FieldCardBody>
+              <div class="d-flex field-area py-1">
+                <div class="d-flex">
+                  <b>Number of Likes: </b>
+                  &nbsp;{{this.userProfileData.numberOfReceivedLikes}}
+                </div>
+              </div>
+            </FieldCardBody>
+          </div>
+        </div>
+      </FieldCardBottomSpace>
+    </FieldCard>
+    <br />
+    <div class="page-header">Posts</div>
+    {{#each this.userProfileData.posts as |post|}}
+      <Post
+        @postData={{post}}
+        @author={{post.user.name}}
+        @body={{post.body}}
+        @numberOfLikes={{post.numberOfLikes}}
+        @numberOfComments={{post.numberOfComments}}
+        @createdAtText={{post.createdAtText}}
+        @isConservative={{true}}
+      />
+    {{/each}}
+    <div class="transparent">{{this.getUserById}}</div>
+  </div>
 </div>

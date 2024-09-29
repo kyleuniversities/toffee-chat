@@ -1,31 +1,55 @@
 <div class="w-100">
-    <FieldCard>
-        <FieldCardTopSpace>
-            <FieldCardHeader>
-                <div class="d-flex">
-                    <PostAuthorContainer @postData={{@postData}} @author={{@author}} />
-                    {{#if this.isDeletable}}
-                        <PostDeletionContainer @deletePost={{this.deletePost}} />
-                    {{/if}}
-                </div>
-            </FieldCardHeader>
-            <div class="mx-2">
-                <FieldCardBody>{{@body}}</FieldCardBody>
-            </div>
-            <PostStatsContainer @postData={{@postData}} @numberOfLikes={{@numberOfLikes}} @numberOfComments={{@numberOfComments}} @createdAtText={{@createdAtText}} />
-        </FieldCardTopSpace>
-        {{#if this.isShowingComments}}
-            <FieldCardLiftedSpace>
-                <PostContentContainer @postData={{@postData}} @author={{@author}} @body={{@body}} @numberOfLikes={{@numberOfLikes}} @numberOfComments={{@numberOfComments}} @createdAtText={{@createdAtText}} @toggleShowComments={{this.toggleShowComments}} />
-            </FieldCardLiftedSpace>
-            <FieldCardExtendedBottomSpace>
-                <CommentContainer @postData={{@postData}} @comments={{@postData.comments}} />
-            </FieldCardExtendedBottomSpace>
-        {{else}}
-            <FieldCardBottomSpace>
-                <PostContentContainer @postData={{@postData}} @author={{@author}} @body={{@body}} @numberOfLikes={{@numberOfLikes}} @numberOfComments={{@numberOfComments}} @createdAtText={{@createdAtText}} @toggleShowComments={{this.toggleShowComments}} />
-            </FieldCardBottomSpace>
-        {{/if}}
-    </FieldCard>
-    <br />
+  <FieldCard>
+    <FieldCardTopSpace>
+      <FieldCardHeader>
+        <div class="d-flex">
+          <PostAuthorContainer @postData={{@postData}} @author={{@author}} />
+          {{#if this.isDeletable}}
+            <PostDeletionContainer @deletePost={{this.deletePost}} />
+          {{/if}}
+        </div>
+      </FieldCardHeader>
+      <div class="mx-2">
+        <FieldCardBody>{{@body}}</FieldCardBody>
+      </div>
+      <PostStatsContainer
+        @postData={{@postData}}
+        @numberOfLikes={{@numberOfLikes}}
+        @numberOfComments={{@numberOfComments}}
+        @createdAtText={{@createdAtText}}
+      />
+    </FieldCardTopSpace>
+    {{#if this.isShowingComments}}
+      <FieldCardLiftedSpace>
+        <PostContentContainer
+          @postData={{@postData}}
+          @author={{@author}}
+          @body={{@body}}
+          @numberOfLikes={{@numberOfLikes}}
+          @numberOfComments={{@numberOfComments}}
+          @createdAtText={{@createdAtText}}
+          @toggleShowComments={{this.toggleShowComments}}
+        />
+      </FieldCardLiftedSpace>
+      <FieldCardExtendedBottomSpace>
+        <CommentContainer
+          @postData={{@postData}}
+          @comments={{@postData.comments}}
+        />
+      </FieldCardExtendedBottomSpace>
+    {{else}}
+      <FieldCardBottomSpace>
+        <PostContentContainer
+          @postData={{@postData}}
+          @author={{@author}}
+          @body={{@body}}
+          @numberOfLikes={{@numberOfLikes}}
+          @numberOfComments={{@numberOfComments}}
+          @createdAtText={{@createdAtText}}
+          @toggleShowComments={{this.toggleShowComments}}
+        />
+      </FieldCardBottomSpace>
+    {{/if}}
+  </FieldCard>
+  <br />
 </div>
