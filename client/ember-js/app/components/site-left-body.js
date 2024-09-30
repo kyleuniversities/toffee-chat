@@ -1,18 +1,17 @@
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
-import { queryManager } from 'ember-apollo-client';
-import query from '../gql/queries/guest.graphql';
+import Component from "@glimmer/component";
+import { tracked } from "@glimmer/tracking";
+import { action } from "@ember/object";
+import { inject as service } from "@ember/service";
+import query from "../gql/queries/my_user_data.graphql";
 
 export default class SiteLeftBody extends Component {
-  @queryManager apollo;
+  @service toffeeChatApollo;
 
-  @tracked userData = {};
+  @tracked userData = { id: "0" };
 
   @action
   async getUserInfo() {
-    const variables = { userId: "33" }
-    const result = await this.apollo.query({ query, variables }, null);
-    this.userData = result.userById[0];
+    const result = await this.toffeeChatApollo.query({ query }, null);
+    this.userData = result.myUserData[0];
   }
 }

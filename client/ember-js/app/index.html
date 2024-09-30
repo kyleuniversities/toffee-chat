@@ -20,10 +20,29 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">-->
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/ember-js.css">
-
     {{content-for "head-footer"}}
   </head>
   <body>
+    <script>
+      window.onclick = function(event) {
+        var target = event.target
+        var parent = target
+        var match = false
+        while (parent.parentNode) {
+          parent = parent.parentNode
+          if (parent.id === 'profile-box-container') {
+            match = true
+            break
+          }
+        }
+        if (!match) {
+          var container = document.getElementById("profile-box-container")
+          if (container.classList.contains("profile-box-show")) {
+            container.classList.remove("profile-box-show")
+          }
+        }
+      }
+    </script>
     {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>

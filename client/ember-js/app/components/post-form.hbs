@@ -1,9 +1,18 @@
 <FullFieldCard>
-    <FieldCardHeader>
-        <div class="post-form-header">
-            Write a Post
-        </div>
-    </FieldCardHeader>
-    <Input id="post-form-field" class="post-form-field px-2 mb-2" placeholder="Something you wanna share? Feel free to write it here!" @value={{this.postBody}}/>
-    <button class="post-form-button" type="button" onclick={{ this.createPost }}>Post</button>
+  <FieldCardHeader>
+    <div class="post-form-header">
+      Write a Post
+    </div>
+  </FieldCardHeader>
+  <Input
+    id="post-form-field"
+    class="post-form-field px-2 mb-2"
+    placeholder="Something you wanna share? Feel free to write it here!"
+    @value={{this.postBody}}
+  />
+  <button
+    class="post-form-button"
+    type="button"
+    onclick={{this.createPost}}
+  >Post</button>
 </FullFieldCard>

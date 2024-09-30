@@ -10,14 +10,22 @@ class GraphqlController < ApplicationController
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+    current_user = User.where(username: 'guest488').first.as_json
+    authorization_header = request.headers["Authorization"]
+    it = 14
+    puts "Query_#{it}: #{query}"
+    puts "Auth_#{it}: #{authorization_header}"
+    if authorization_header.present? && authorization_header.include?("Bearer ") && authorization_header.length > 10
+      hmac_secret = ENV["AUTH_SECRET_KEY"]
+      token = authorization_header[7, authorization_header.length - 7]
+      decoded = JWT.decode(token, hmac_secret, true, { :algorithm => 'HS256' })
+      puts "Decoded_#{it}: #{decoded}"
+      current_user = decoded[0]['user']
+    end
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: current_user
     }
     result = RubySchema.execute(query, variables: variables, context: context, operation_name: operation_name)
-    
-    puts "Hello"
-    puts json: result
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?

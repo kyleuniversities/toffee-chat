@@ -1,0 +1,43 @@
+<div class="site-body login-form-page">
+  <div class="entry-form-middle-body d-flex px-2">
+    <FullFieldCard>
+      <FieldCardHeader>
+        <div class="d-flex">
+          <div class="d-flex h-100 h-50p mb-2">
+            <div class="d-flex mx-2 h-50p align-items-center">
+              <div class="entry-form-title align-items-center">
+                Log Into Your Account
+              </div>
+            </div>
+          </div>
+        </div>
+      </FieldCardHeader>
+      <FieldCardBody class="mx-2 d-block">
+        <form onsubmit={{this.logIn}}>
+          <div class="mx-2">
+            <div class="mb-3 mt-1">
+              <b>Email:</b>
+              <Input
+                id="login-email-field"
+                class="post-form-field px-2 mb-2"
+                placeholder="Enter your email"
+                @value={{@email}}
+              />
+              <br />
+              <br />
+              <b>Password:</b>
+              <Input
+                id="login-password-field"
+                @type="password"
+                class="post-form-field px-2 mb-2"
+                placeholder="Enter your password"
+                @value={{@password}}
+              />
+            </div>
+            <button class="entry-form-button" type="submit">Log In</button>
+          </div>
+        </form>
+      </FieldCardBody>
+    </FullFieldCard>
+  </div>
+</div>

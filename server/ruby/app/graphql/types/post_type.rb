@@ -38,7 +38,7 @@ module Types
       minute = text[14,2]
       second = text[17,2]
       isAm = hour < 12
-      hourText = if isAm then (if hour == 24 || hour == 0 then 12 else hour end) else hour - 12 end
+      hourText = if isAm then (if hour == 24 || hour == 0 then 12 else hour end) else (if hour == 12 then 12 else hour - 12 end ) end
       isAmText = if isAm then "am" else "pm" end
       "#{monthText} #{day}, #{year} @#{hourText}:#{minute}:#{second}#{isAmText}"
     end

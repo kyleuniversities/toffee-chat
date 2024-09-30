@@ -42,6 +42,13 @@ module Types
       User.where(id: id)
     end
 
+    field :myUserData, [UserType], null: false, description: 'Gets users data'
+    def myUserData()
+      current_user = context[:current_user]
+      user_data = User.where(id: current_user['id'])
+      user_data
+    end
+
     # field :newsPosts, [PostType], null: false, description: 'List all news posts'
     # def newsPosts
     #   posts = Post.all
@@ -49,10 +56,8 @@ module Types
     # end
 
     # Post Fields
-    field :posts, [PostType], null: false  do
-      argument :userId, String, required: true
-    end
-    def posts(userId:)
+    field :posts, [PostType], null: false, description: 'List all posts'
+    def posts()
       posts = Post.all
       reversedPosts = posts.sort {|a,b| b.created_at <=> a.created_at }
       reversedPosts

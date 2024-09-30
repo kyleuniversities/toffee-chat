@@ -1,3 +1,5 @@
 tmp
 log
-config
+config/credentials.yml.enc
+config/master.key
+.env
