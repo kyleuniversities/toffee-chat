@@ -32,13 +32,13 @@ export default class PostContentContainer extends Component {
     const matchingLikes = [];
     if (this.args.postData) {
       const likes = this.args.postData.likes;
-      console.log(
-        `hasLikesPresent-POST_DATA: ${JSON.stringify(this.args.postData)}`,
-      );
-      console.log(`hasLikesPresent-LIKES: ${JSON.stringify(likes)}`);
+      // console.log(
+      //   `hasLikesPresent-POST_DATA: ${JSON.stringify(this.args.postData)}`,
+      // );
+      // console.log(`hasLikesPresent-LIKES: ${JSON.stringify(likes)}`);
       const sessionUserId = this.toffeeChatSession.getUserId();
       for (let like of likes) {
-        console.log(` Check_Like: ${like.userId} === ${sessionUserId}`);
+        // console.log(` Check_Like: ${like.userId} === ${sessionUserId}`);
         if (like.userId === this.toffeeChatSession.getUserId()) {
           matchingLikes.push(like);
         }

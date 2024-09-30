@@ -135,20 +135,20 @@ module Types
       end
       def likeUnlikePost(postId:)
         userId = context[:current_user]['id']
-        puts "USER_ID_15: #{userId}"
+        puts "USER_ID_16: #{userId}"
         post = Post.where(id: postId).first
         user = User.where(id: userId).first
         postLikes = post.likes
         userLikes = user.likes
-        puts "OLD_POST_LIKES_15: #{postLikes.as_json}"
+        puts "OLD_POST_LIKES_16: #{postLikes.as_json}"
         matchingLikes = []
         for postLike in postLikes do 
-          if postLike.post.id.to_s == postId && postLike.user.id.to_s == userId
+          if postLike.post.id.to_s == postId.to_s && postLike.user.id.to_s == userId.to_s
             matchingLikes.append(postLike)
           end
         end
         like = Like.create
-        puts "MATCHING_LIKES_15: #{matchingLikes.as_json}"
+        puts "MATCHING_LIKES_16: #{matchingLikes.as_json}"
         if matchingLikes.length() == 0
           puts "Add Like"
           postLikes.append(like)
@@ -160,9 +160,9 @@ module Types
             matchingLike.destroy
           end
         end
-        puts "USER__15: #{user.as_json}"
-        puts "USER_LIKES_15: #{userLikes.as_json}"
-        puts "NEW_POST_LIKES_15: #{postLikes.as_json}"
+        puts "USER__16: #{user.as_json}"
+        puts "USER_LIKES_16: #{userLikes.as_json}"
+        puts "NEW_POST_LIKES_16: #{postLikes.as_json}"
         post.update(likes: postLikes)
         user.update(likes: userLikes)
         like

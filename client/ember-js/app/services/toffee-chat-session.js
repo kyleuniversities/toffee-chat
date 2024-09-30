@@ -13,7 +13,6 @@ export default class ToffeeChatSessionService extends Service {
       const sessionData = JSON.parse(data);
       id = this.maps.getValue(sessionData, "authenticated.user.id", id);
     }
-    console.log(`getUserId():: "${ENV.GUEST_USER_ID}" "${id}"`);
     return id;
   }
 

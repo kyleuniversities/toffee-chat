@@ -43,10 +43,8 @@ export default class Post extends Component {
   }
 
   hasLikePresent() {
-    console.log("hasLikePresent");
     const matchingLikes = [];
     if (this.args.postData) {
-      console.log(`LIKES: ${JSON.stringify(this.args.postData)}`);
       const likes = this.args.postData.likes;
       for (let like of likes) {
         if (like.userId === this.toffeeChatSession.getUserId()) {

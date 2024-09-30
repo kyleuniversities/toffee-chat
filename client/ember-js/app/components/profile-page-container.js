@@ -14,11 +14,16 @@ export default class ProfilePageContainer extends Component {
   async getUserById() {
     const variables = { userId: this.args.user.id };
     const result = await this.apollo.query({ query, variables }, null);
-    this.userProfileData = result.userById[0];
+    const userProfileData = result.userById[0];
+    this.userProfileData = userProfileData;
+    if (userProfileData.posts && userProfileData.posts.length > 0) {
+      this.hasNoPosts = false;
+    }
   }
 
   @action
   userHasNoPosts() {
+    console.log(JSON.stringify(this.userProfileData));
     return (
       !this.userProfileData ||
       !this.userProfileData.posts ||
