@@ -11,9 +11,20 @@ class GraphqlController < ApplicationController
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+    current_user = nil
+    authorization_header = request.headers["Authorization"]
+    puts "Auth: #{authorization_header}"
+    if authorization_header.present? && authorization_header.include?("Bearer ") && authorization_header.length > 10
+      hmac_secret = ENV["AUTH_SECRET_KEY"]
+      token = authorization_header[7, authorization_header.length - 7]
+      puts "Token: #{token}"
+      decoded = JWT.decode(token, hmac_secret, true, { :algorithm => 'HS256' })
+      puts "Decoded: #{decoded}"
+      current_user = decoded[0]['user']
+      puts "Current_User: #{current_user}"
+    end
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: current_user
     }
     result = RubySchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     

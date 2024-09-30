@@ -7,13 +7,15 @@ class OauthController < ApplicationController
         password = params[:password]
         users = User.where(email: email)
         if users.length > 0 && users[0].authenticate(password)
+            matching_user = users[0].as_json
+            puts matching_user
             hmac_secret = ENV["AUTH_SECRET_KEY"]
-            payload = { :user => users[0].as_json, :id => users[0].id }
+            payload = { :user => matching_user.as_json, :id => matching_user['id'] }
             token = JWT.encode(payload, hmac_secret,'HS256')
             puts token
             decoded = JWT.decode(token, hmac_secret, true, { :algorithm => 'HS256' })
             puts decoded 
-            render(json: { status: 200, message: "Authenticated #{ENV["AUTH_SECRET_KEY"]}", access_token: token, expires_in: 3600, decoded: decoded } )
+            render(json: { status: 200, access_token: token, expires_in: 3600000, user: matching_user } )
         else
             render(json: { status: 401, message: "Unauthorized #{ENV["AUTH_SECRET_KEY"]}" } )
         end
