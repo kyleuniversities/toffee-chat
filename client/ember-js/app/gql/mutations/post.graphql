@@ -1,11 +1,11 @@
-mutation($userId: String!, $body: String!) {
-    createPost(userId: $userId, body: $body) {
-        id,
-        body,
-        numberOfLikes,
-        numberOfComments,
-        user {
-            name
-        }
+mutation ($body: String!) {
+  createPost(body: $body) {
+    id
+    body
+    numberOfLikes
+    numberOfComments
+    user {
+      name
     }
+  }
 }

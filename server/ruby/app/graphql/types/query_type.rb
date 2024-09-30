@@ -44,16 +44,8 @@ module Types
 
     field :myUserData, [UserType], null: false, description: 'Gets users data'
     def myUserData()
-      it = "7"
-      puts "\n\n\nMY_USER_DATA_#{it}:\"#{context[:current_user]}\", \"#{context[:hello]}\""
-      user_data = User.where(username: 'guest488')
-      puts "\n\n\nMY_USER_DATA_#{it}_A:\"#{user_data}\""
       current_user = context[:current_user]
-      if current_user != nil
-        puts "Fetching curr"
-        user_data = User.where(id: current_user['id'])
-      end
-      puts "\n\n\nMY_USER_DATA_#{it}_B:\"#{user_data}\""
+      user_data = User.where(id: current_user['id'])
       user_data
     end
 
@@ -64,10 +56,8 @@ module Types
     # end
 
     # Post Fields
-    field :posts, [PostType], null: false  do
-      argument :userId, String, required: true
-    end
-    def posts(userId:)
+    field :posts, [PostType], null: false, description: 'List all posts'
+    def posts()
       posts = Post.all
       reversedPosts = posts.sort {|a,b| b.created_at <=> a.created_at }
       reversedPosts

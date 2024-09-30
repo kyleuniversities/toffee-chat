@@ -3,7 +3,10 @@
   <FieldCard>
     <FieldCardTopSpace>
       <FieldCardHeader>
-        <ProfileContainer @name={{this.userData.name}} />
+        <ProfileContainer
+          @userData={{this.userData}}
+          @name={{this.userData.name}}
+        />
       </FieldCardHeader>
       <br />
       <FieldCardBody>
@@ -37,7 +40,7 @@
       </FieldCardHeader>
       <FieldCardBody>
         This shows the total likes and comments that the user
-        <i>"Guest"</i>
+        <i>"{{this.userData.name}}"</i>
         has authored:
       </FieldCardBody>
     </FieldCardTopSpace>

@@ -13,8 +13,9 @@ Comment.destroy_all
 Post.destroy_all
 User.destroy_all
 
-users = User.create!([
+users_array = [
     {
+        id: User.create_id(),
         name: "Adam",
         username: "adam234",
         email: "adam234@example.com",
@@ -22,6 +23,7 @@ users = User.create!([
         bio: "Hi everyone, I'm Adam.  I'm considered to be good at mountain climbing"
     },
     {
+        id: "366024644158867271",
         name: "Guest",
         username: "guest488",
         email: "guest488@example.com",
@@ -29,6 +31,7 @@ users = User.create!([
         bio: "This is the default guest account for users"
     },
     {
+        id: User.create_id(),
         name: "Bianca",
         username: "bianca987",
         email: "bianca987@example.com",
@@ -36,13 +39,18 @@ users = User.create!([
         bio: "Ittts Bianca!  Happy to be here!"
     },
     {
+        id: User.create_id(),
         name: "Bob Neumann",
         username: "neumann756",
         email: "neumann756@example.com",
         password: "neumann756%",
         bio: "Hello everybody, I'm Bob Neumann, your local news anchor giving you the best news and coverage you can trust!"
     }
-])
+]
+
+puts users_array
+
+users = User.create!(users_array)
 
 posts = Post.create!([
     {

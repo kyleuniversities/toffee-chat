@@ -7,7 +7,7 @@ import query from "../gql/queries/my_user_data.graphql";
 export default class SiteLeftBody extends Component {
   @service toffeeChatApollo;
 
-  @tracked userData = {};
+  @tracked userData = { id: "0" };
 
   @action
   async getUserInfo() {

@@ -6,6 +6,8 @@ import { inject as service } from "@ember/service";
 export default class ProfileBoxContainer extends Component {
   @service toffeeChatSession;
   @tracked profileName = this.getCurrentUserName();
+  @tracked isGuestUser = this.isGuest();
+  @tracked profileUrl = this.getProfileUrl();
 
   @action
   async toggleShow() {
@@ -17,5 +19,20 @@ export default class ProfileBoxContainer extends Component {
   @action
   getCurrentUserName() {
     return this.toffeeChatSession.getUserName();
+  }
+
+  @action
+  isGuest() {
+    return this.getCurrentUserName() === "Guest";
+  }
+
+  @action
+  getProfileUrl() {
+    return `/profile/${this.toffeeChatSession.getUserId()}`;
+  }
+
+  @action
+  logOut() {
+    this.toffeeChatSession.invalidate();
   }
 }

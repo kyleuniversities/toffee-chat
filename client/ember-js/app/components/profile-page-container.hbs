@@ -4,7 +4,7 @@
     <FieldCard>
       <div class="profile-page-cover-image-container">
         <img
-          src="/assets/covers/lake-sky/index.png"
+          src={{user-cover this.userProfileData.id}}
           class="profile-page-cover-image"
           alt="cover"
         />
@@ -13,7 +13,7 @@
         <div class="px-2 d-flex h-100 h-50p">
           <div class="d-flex h-50p align-items-center">
             <img
-              src="/assets/users/user-picture-guest.png"
+              src={{user-picture this.userProfileData.name}}
               class="profile-avatar-image"
               alt="profile"
             />
@@ -55,6 +55,9 @@
     </FieldCard>
     <br />
     <div class="page-header">Posts</div>
+    {{#if this.hasNoPosts}}
+      <p>This user has no posts yet.</p>
+    {{/if}}
     {{#each this.userProfileData.posts as |post|}}
       <Post
         @postData={{post}}

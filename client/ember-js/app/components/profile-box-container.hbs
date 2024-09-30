@@ -2,7 +2,7 @@
   <div class="px-2 d-flex h-100 h-50p" onclick={{this.toggleShow}}>
     <div class="d-flex h-50p align-items-center">
       <img
-        src="/assets/users/user-picture-guest.png"
+        src={{user-picture this.profileName}}
         class="profile-avatar-image"
         alt="profile"
       />
@@ -13,8 +13,15 @@
       </div>
     </div>
   </div>
-  <div id="profile-box-dropdown-menu">
-    <a class="dropdown-item" href="/login">Log In</a>
-    <a class="dropdown-item" href="/registration">Register</a>
-  </div>
+  {{#if this.isGuestUser}}
+    <div id="profile-box-dropdown-menu">
+      <a class="dropdown-item" href="/login">Log In</a>
+      <a class="dropdown-item" href="/registration">Register</a>
+    </div>
+  {{else}}
+    <div id="profile-box-dropdown-menu">
+      <a class="dropdown-item" href={{this.profileUrl}}>My Profile</a>
+      <a class="dropdown-item" onclick={{this.logOut}} href="/">Log Out</a>
+    </div>
+  {{/if}}
 </div>

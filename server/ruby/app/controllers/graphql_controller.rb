@@ -7,24 +7,22 @@ class GraphqlController < ApplicationController
   # protect_from_forgery with: :null_session
 
   def execute
-    # puts "\n\n\nHEADERS_2:\n\"#{request.headers}\", \"#{request.headers["Authorization"]}\"\n\n\n"
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
-    current_user = nil
+    current_user = User.where(username: 'guest488').first.as_json
     authorization_header = request.headers["Authorization"]
-    puts "Auth_7: \"#{authorization_header}\""
+    it = 14
+    puts "Query_#{it}: #{query}"
+    puts "Auth_#{it}: #{authorization_header}"
     if authorization_header.present? && authorization_header.include?("Bearer ") && authorization_header.length > 10
       hmac_secret = ENV["AUTH_SECRET_KEY"]
       token = authorization_header[7, authorization_header.length - 7]
-      #puts "Token: #{token}"
       decoded = JWT.decode(token, hmac_secret, true, { :algorithm => 'HS256' })
-      #puts "Decoded: #{decoded}"
+      puts "Decoded_#{it}: #{decoded}"
       current_user = decoded[0]['user']
-      #puts "Current_User: #{current_user}"
     end
     context = {
-      hello: 'Test',
       current_user: current_user
     }
     result = RubySchema.execute(query, variables: variables, context: context, operation_name: operation_name)

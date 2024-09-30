@@ -1,6 +1,6 @@
-mutation($userId: String!, $postId: String!) {
-    likeUnlikePost(userId: $userId, postId: $postId) {
-        userId,
-        postId
-    }
+mutation ($postId: String!) {
+  likeUnlikePost(postId: $postId) {
+    userId
+    postId
+  }
 }
