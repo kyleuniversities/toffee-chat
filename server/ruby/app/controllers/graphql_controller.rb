@@ -7,29 +7,27 @@ class GraphqlController < ApplicationController
   # protect_from_forgery with: :null_session
 
   def execute
-    puts "\n\n\nHEADERS_2:\n\"#{request.headers}\", \"#{request.headers["Authorization"]}\"\n\n\n"
+    # puts "\n\n\nHEADERS_2:\n\"#{request.headers}\", \"#{request.headers["Authorization"]}\"\n\n\n"
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
     current_user = nil
     authorization_header = request.headers["Authorization"]
-    puts "Auth: #{authorization_header}"
+    puts "Auth_7: \"#{authorization_header}\""
     if authorization_header.present? && authorization_header.include?("Bearer ") && authorization_header.length > 10
       hmac_secret = ENV["AUTH_SECRET_KEY"]
       token = authorization_header[7, authorization_header.length - 7]
-      puts "Token: #{token}"
+      #puts "Token: #{token}"
       decoded = JWT.decode(token, hmac_secret, true, { :algorithm => 'HS256' })
-      puts "Decoded: #{decoded}"
+      #puts "Decoded: #{decoded}"
       current_user = decoded[0]['user']
-      puts "Current_User: #{current_user}"
+      #puts "Current_User: #{current_user}"
     end
     context = {
+      hello: 'Test',
       current_user: current_user
     }
     result = RubySchema.execute(query, variables: variables, context: context, operation_name: operation_name)
-    
-    puts "Hello"
-    puts json: result
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?

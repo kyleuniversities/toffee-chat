@@ -5,7 +5,7 @@ import { Promise } from "rsvp";
 
 export default class ToffeeChatApolloService extends ApolloService {
   // Acquire session
-  @service session;
+  @service toffeeChatSession;
 
   link() {
     let httpLink = super.link();
@@ -16,19 +16,12 @@ export default class ToffeeChatApolloService extends ApolloService {
   }
 
   _runAuthorize() {
-    if (!this.get("session.isAuthenticated")) {
+    let token = this.toffeeChatSession.getToken();
+    if (!token) {
       return {};
     }
     return new Promise((success) => {
       let headers = {};
-      let token = null;
-      if (
-        this.session &&
-        this.session.data &&
-        this.session.data.authenticated
-      ) {
-        token = this.session.data.authenticated.access_token;
-      }
       headers["Authorization"] = `Bearer ${token}`;
       success({ headers });
     });

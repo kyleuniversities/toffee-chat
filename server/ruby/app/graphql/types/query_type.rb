@@ -42,6 +42,21 @@ module Types
       User.where(id: id)
     end
 
+    field :myUserData, [UserType], null: false, description: 'Gets users data'
+    def myUserData()
+      it = "7"
+      puts "\n\n\nMY_USER_DATA_#{it}:\"#{context[:current_user]}\", \"#{context[:hello]}\""
+      user_data = User.where(username: 'guest488')
+      puts "\n\n\nMY_USER_DATA_#{it}_A:\"#{user_data}\""
+      current_user = context[:current_user]
+      if current_user != nil
+        puts "Fetching curr"
+        user_data = User.where(id: current_user['id'])
+      end
+      puts "\n\n\nMY_USER_DATA_#{it}_B:\"#{user_data}\""
+      user_data
+    end
+
     # field :newsPosts, [PostType], null: false, description: 'List all news posts'
     # def newsPosts
     #   posts = Post.all
