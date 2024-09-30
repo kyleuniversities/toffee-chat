@@ -12,12 +12,12 @@ export default class LoginForm extends Component {
   @service router;
 
   @action
-  async logIn() {
+  async logIn(event) {
+    event.preventDefault();
     const email = this.args.email;
     const password = this.args.password;
     try {
       await this.session.authenticate('authenticator:oauth', email, password);
-      alert('Authenticated');
       this.router.transitionTo('/');
     } catch (error) {
       alert('Invalid credentials: Please try again.');

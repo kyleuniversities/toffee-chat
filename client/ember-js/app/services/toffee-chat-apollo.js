@@ -28,9 +28,7 @@ export default class ToffeeChatApolloService extends ApolloService {
         this.session.data.authenticated
       ) {
         token = this.session.data.authenticated.access_token;
-      } //this.get("session.data.authenticated.token");
-      alert("TF_TOKEN: " + JSON.stringify(this.session.data.authenticated));
-      alert("TF_TOKEN: " + token);
+      }
       headers["Authorization"] = `Bearer ${token}`;
       success({ headers });
     });
