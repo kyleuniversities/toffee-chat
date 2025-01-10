@@ -470,6 +470,13 @@ a .site-header:hover {
   color: var(--dark-gray);
 }
 
+.sub-created-at-text {
+  @media (max-width: 980px) {
+    word-wrap: break-word;
+    max-width: 50%;
+  }
+}
+
 .sub-comment-text {
   color: var(--dark-green);
 }
