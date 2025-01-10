@@ -503,6 +503,12 @@ a .site-header:hover {
   margin-right: 25%;
   border-radius: 0;
   width: 50%;
+
+  @media (max-width: 660px) {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    width: 75%;
+  }
 }
 
 .entry-form-title {
